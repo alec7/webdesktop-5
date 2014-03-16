@@ -1,0 +1,115 @@
+#{extends 'template/template_view.html' /}
+<style type="text/css">
+    .selectDiv {
+        float: left;
+    }
+
+    textarea {
+        text-align: left
+    }
+</style>
+<div class="worktitle">
+    <div class="nav">
+        <span>修改应用</span>
+    </div>
+</div>
+<div class="workinfo">
+#{form @management.AppManager.edit(), method:'POST', id:'f1'}
+    <input type="hidden" name="app.id" value="${app.id}"/>
+    <input type="hidden" name="ids" id="ids"/>
+    <fieldset>
+        <table>
+            <colgroup>
+                <col style="width:100px"/>
+                <col/>
+            </colgroup>
+            <tr>
+                <td class="right title"><i> *</i>名称:</td>
+                <td>
+                    <input name="app.name" value="${app.name?:'无'}"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="right title">排序:</td>
+                <td>
+                    <input name="app.orderNo" value="${app.orderNo?:'无'}"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="right title">备注:</td>
+                <td>
+                    <textarea name="app.remark" class="txtarea">
+					${app.remark?:'无'}
+                    </textarea>
+                </td>
+            </tr>
+            <tr>
+                <td class="right title">是否显示:</td>
+                <td>
+                    <input type="radio" name="app.isShow" value="1" checked="checked">是
+                    <input type="radio" name="app.isShow" value="0">否
+                </td>
+            </tr>
+            <tr>
+                <td class="right title">选择模块:</td>
+                <td>
+                    <div class="selectDiv">
+                        <select style="height: 200px" id="selectModules" multiple="multiple" class="txt">
+							#{list items:_allModule, as:'m'}
+                                <option value="${m.id}">${m.name}</option>
+							#{/list}
+                        </select>
+                    </div>
+                    <div class="selectDiv">
+                        <div>
+                            <input type="button" id="addModule" value="添加>>"/>
+                        </div>
+                        <div>
+                            <input type="button" id="deleteModule" value="<<删除"/>
+                        </div>
+                    </div>
+                    <div class="selectDiv">
+                        <select style="height: 200px" id="confirmModules" multiple="multiple" name="moduleIds"
+                                class="txt">
+							#{list items:app.modules, as:'m'}
+                                <option value="${m.id}">${m.name}</option>
+							#{/list}
+                        </select>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" aling="right">
+                    <button type="button" class="highlight" id="saveBtn">
+                        <div>保存</div>
+                    </button>
+                    <button type="button" onclick="javascript:history.back(-1);">
+                        <div>返回</div>
+                    </button>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+#{/form}
+</div>
+<script>
+    $("#addModule").click(function () {
+        var modules = $("#selectModules").find("option:selected");
+        $("#confirmModules").append(modules);
+        $("#selectModules").find("option:selected").remove();
+    });
+
+    $("#deleteModule").click(function () {
+        var modules = $("#confirmModules").find("option:selected");
+        $("#selectModules").append(modules);
+        $("#confirmModules").find("option:selected").remove();
+    });
+    $("#saveBtn").click(function () {
+        var ids = "";
+        $("#confirmModules").find("option").each(function () {
+            ids += $(this).val() + ",";
+        });
+        $("#ids").val(ids);
+        $("#f1").submit();
+    })
+</script>

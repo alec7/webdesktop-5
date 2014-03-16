@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <meta charset="${_response_encoding}">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta name="keywords" content="WebDesktop,webOS,web,desktop,web桌面"/>
+    <meta http-equiv="x-ua-compatible" content="ie=7"/>
+
+    <title>Web桌面 - WebDesktop技术交流分享，集成平台供应, 技术支持</title>
+
+    <link rel="stylesheet" media="screen" href="@{'/public/common/css/style.css'}">
+#{get 'moreStyles' /}
+
+    <script src="@{'/public/common/js/jquery-1.6.1.min.js'}" type="text/javascript"></script>
+    <script src="@{'/public/common/js/base.js'}" type="text/javascript"></script>
+#{get 'moreScripts' /}
+    <script>
+        $(document).ready(function () {
+            var flag = false;
+            initlayouter();
+            $(".menus > li >div").mouseover(function () {
+                if (!$(this).hasClass("focus"))
+                    $(this).addClass("over");
+            }).mouseout(function () {
+                $(this).removeClass("over");
+            }).click(function () {
+                $(".menus > li >div").removeClass("focus");
+                $(this).removeClass("over").addClass("focus");
+            });
+            $("#pagebody_center").mousedown(function () {
+                flag = true;
+                if ($(this).get(0).setCapture)
+                    $(this).get(0).setCapture();
+            }).mouseup(function () {
+                flag = false;
+                if ($(this).get(0).releaseCapture)
+                    $(this).get(0).releaseCapture();
+                else if (window.captureEvents) {
+                    window.captureEvents(Event.MOUSEMOVE | Event.MOUSEUP);
+                }
+            }).mousemove(function (e) {
+                if (flag == false)
+                    return;
+                else if (window.captureEvents) {
+                    window.captureEvents(Event.MOUSEMOVE | Event.MOUSEUP);
+                }
+                //获取鼠标位置
+                var x = e.pageX;
+                if (x > (getTotalWidth() / 2))
+                    return;
+                if (x < 20)
+                    return;
+                $("#pagebody_left").width(x - 5);
+                $("#pagebody_center").css("left", x);
+                $("#pagebody_right").css("margin-left", x);
+            });
+        });
+        $(window).resize(function () {
+            initlayouter();
+        })
+        function initlayouter() {
+            var left = $("#pagebody_left");
+            var center = $("#pagebody_center");
+            var right = $("#pagebody_right");
+            var ifr = $("#pagebody_right_iframe");
+            var height = getTotalHeight() - 8;
+            left.height(height);
+            center.height(height);
+            right.height(height);
+            ifr.height(height);
+        }
+        function go(url) {
+            $("#pagebody_right_iframe").attr("src", url)
+        }
+    </script>
+</head>
+
+<body>
+
+<div id="pagebody">
+
+    <div id="pagebody_left">
+	#{doLayout /}
+    </div>
+    <div id="pagebody_center"></div>
+    <div id="pagebody_right">
+        <iframe id="pagebody_right_iframe" width="100%" border="0" frameborder="0" src="${index?:''}"></iframe>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=" gb2312
+    " />
+    <title>�ű�֮��</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"/>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script type="text/javascript" src="jQuery.timers.js"></script>
+    <script type="text/javascript">
+        //<![CDATA[
+        $(function () {
+            var demos = $("div.demos");
+            //===
+
+            var active = false;
+            $('.controlled-interval', demos).find('.start').css("cursor", "pointer").click(function () {
+                if (!active) {
+                    active = !active;
+                    $(this).parents("div").find('ul').everyTime(1000, 'controlled', function () {
+                        $(this).append("<li>New One</li>");
+                    });
+                }
+            }).end().find('.stop').css("cursor", "pointer").click(function () {
+                if (active) {
+                    active = !active;
+                    $(this).parents("div").find('ul').stopTime('controlled');
+                }
+            });
+
+            $(".uncontrolled-interval p", demos).everyTime(1000, function (i) {
+                $(this).html(i);
+            });
+
+            var event = function () {
+                $(this).text("You did it!");
+                $(this).stopTime();
+            };
+            $("div.controlled-timeout p", demos).click(event).oneTime("5s", function () {
+                $(this).text("Oh noes, too late!");
+                $(this).unbind('click', event);
+            });
+
+            $("div.uncontrolled-timeout p", demos).oneTime(2000,function () {
+                $(this).html("See?");
+            }).oneTime(5000, "soon", function () {
+                $(this).html("I'm unstoppable");
+            });
+            //===
+        });
+        //]]>
+    </script>
+</head>
+<body>
+<div class="demos">
+    <h3>Controlled everyTime</h3>
+
+    <div class="controlled-interval">
+        <ul></ul>
+        <p><span class="start">Start</span> | <span class="stop">Stop</span></p>
+    </div>
+    <h3>Unbounded everyTime</h3>
+
+    <div class="uncontrolled-interval">
+        <p>I am transient... *sigh*</p>
+    </div>
+    <h3>Controlled oneTime</h3>
+
+    <div class="controlled-timeout">
+        <p>Click here to stop me!</p>
+    </div>
+    <h3>Uncontrolled oneTime</h3>
+
+    <div class="uncontrolled-timeout">
+        <p>I'm gonna change whether you like it or not.</p>
+    </div>
+</div>
+
+
+</body>
+</html>

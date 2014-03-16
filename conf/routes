@@ -1,0 +1,27 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                                       userdesktop.Userdesktop.index
+
+# Ignore favicon requests
+GET     /favicon.ico                            404
+
+# Map static resources from the /app/public folder to the /public path
+GET     /public/                                staticDir:public
+
+#query all apps and modules
+GET /application/apps  application.App.query
+#addModule
+POST /userdesktop/addmodule    userdesktop.UserDesktop.addModule
+POST /userdesktop/uninstallmodule    userdesktop.UserDesktop.uninstallModule
+
+#应用管理
+GET /management/index    management.Index.index
+GET /management/findapps    management.AppManager.findApps
+GET /management/findmodules    management.ModuleManager.findModules
+GET /management/findicons    management.IconManager.findIcons
+
+GET /management/app/show/{id}   management.AppManager.show
+POST /management/app/edit   management.AppManager.edit

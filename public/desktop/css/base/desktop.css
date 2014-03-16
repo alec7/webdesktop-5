@@ -1,0 +1,678 @@
+﻿
+* {
+    cursor: default;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    text-align: center;
+
+}
+
+body {
+    /**background: #222;*/
+    /*font-family:"微软雅黑";*/
+
+    font-size: 12px;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+    float: left;
+}
+
+#logo {
+    width: 104px;
+    height: 41px;
+    position: absolute;
+    left: 5px;
+    bottom: 0px;
+    background: url("images/bottom_logo.png") no-repeat;
+}
+
+#pagetop {
+    height: 70px;
+    background: url("images/newdesktop.png") repeat-x;
+}
+
+#pagetop #banner {
+    height: 70px;
+    background: url("images/banner.png") no-repeat 20px center;
+}
+
+#pagetop .personalportal {
+    width: 120px;
+    position: absolute;
+    right: 140px;
+    top: 40px;
+}
+
+#pagetop .companyportal {
+    width: 120px;
+    position: absolute;
+    right: 60px;
+    top: 40px;
+}
+
+#pagetop .noteDIV {
+    width: 120px;
+    position: absolute;
+    right: 190px;
+    top: 40px;
+}
+
+#pagetop .bulletinDIV {
+    width: 120px;
+    position: absolute;
+    right: 300px;
+    top: 40px;
+}
+
+#pagetop .workDiv {
+    position: absolute;
+    background-image: url("images/btn.png");
+    background-position: 0px 27px;
+    no-repeat;
+    width: 100px;
+    height: 30px;
+    vertical-align: middle;
+    line-height: 23px;
+}
+
+#pagetop .workDiv a {
+    font-size: 12px;
+    font-weight: 400;
+    color: #FFFFFF;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+}
+
+#pagetop .workDiv a:hover {
+    color: #caeeff;
+    top: 1px;
+    left: 1px;
+    position: relative;
+}
+
+#pagetop .workDiv span {
+    background-image: url("images/icon_s1.png");
+    background-position: 5px 5px;
+    no-repeat;
+    width: 16px;
+    height: 16px;
+}
+
+#pagetabbar {
+    position: absolute;
+    z-index: 1;
+    width: 100px;
+    height: 30px;
+    bottom: 40px; /*background:url("images/funcbar/bar_bg.png") no-repeat;*/
+}
+
+#pagetabbar div, #pagetabbar ul, #pagetabbar li, #pagetabbar a {
+    text-align: center;
+    height: 26px;
+    line-height: 26px;
+    font: 14px/1.8 tahoma, helvetica, clean, sans-serif;
+}
+
+#pagetabbar .leftbg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0px;
+}
+
+#pagetabbar .rightbg {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 0px;
+}
+
+#pagetabbar #pagetabs {
+    /*background-image:url("images/funcbar/bar.png");background-repeat:no-repeat;background-position:42px -80px;*/
+}
+
+#pagetabbar #pagetabs.two {
+    background-position: 72px -80px;
+}
+
+#pagetabbar #pagetabs.three {
+    background-position: 102px -80px;
+}
+
+#pagetabbar #pagetabs a {
+    float: left;
+    color: #ccc;
+    width: 30px;
+    background-image: url("images/funcbar/pagebar.png");
+    background-repeat: no-repeat;
+    background-position: 4px -26px;
+}
+
+#pagetabbar #pagetabs a.current {
+    color: #666;
+    font-weight: bold;
+    background-position: 5px 3px;
+}
+
+#pagetabbar #pagetabs a.pagetab:hover {
+    color: #666;
+    font-weight: bold;
+    background-position: 5px 3px;
+}
+
+#pagetabbar #pagetabs a.person {
+    display: none;
+    height: 32px;
+    width: 32px;
+    margin-right: 30px;
+    background-position: 0px -47px;
+}
+
+#pagetabbar #pagetabs a.tasks {
+    display: none;
+    margin-left: 5px;
+    height: 32px;
+    width: 30px;
+    background-position: -24px -47px;
+}
+
+#pagetabbar #pagetabs a.msgs {
+    display: none;
+    height: 32px;
+    width: 30px;
+    background-position: -50px -47px;
+}
+
+#pagetabbar #pagetabs a.logout {
+    display: none;
+    height: 32px;
+    width: 30px;
+    background-position: -75px -47px;
+}
+
+#pagetabbar #pagetabs .theme {
+    display: none;
+    position: absolute;
+    right: 5px;
+    top: 3px;
+    background-color: red;
+    background-image: url("images/funcbar/bar.png");
+    background-position: 0px -50px
+}
+
+/*#pagetabbar #pagetabs .system:hover { background-position:-60px -27px; }*/
+
+#taskbar {
+    position: absolute;
+    left: 0;
+    padding-top: 1px;
+    bottom: 0px;
+    width: 100%;
+    height: 33px;
+    background: url("images/newdesktop.png") repeat-x scroll left -86px;
+}
+
+#tasks li {
+    float: right;
+    margin-right: 2px;
+    width: 90px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    overflow: hidden;
+    background: url("images/taskbar/bottom_icon.png") no-repeat left top;
+}
+
+#tasks li.focus {
+    background-position: -90px top;
+}
+
+#tasks li.over {
+    background-position: -180px top;
+}
+
+#tasks li a {
+    color: #fff;
+}
+
+#tasks li.focus a {
+    font-weight: bold;
+    color: #000;
+}
+
+#pages {
+    text-align: left;
+}
+
+.page {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    top: 0;
+}
+
+#funcbar {
+    display: none;
+    width: 480px;
+    height: 28px;
+    line-height: 28px;
+    color: #fff;
+    position: absolute;
+    z-index: 1;
+    right: 5px;
+    top: 5px;
+    padding: 0px 5px;
+    background: url("images/topbar/topbar_bg.png") no-repeat;
+}
+
+#funcbar li.func {
+    position: relative;
+    padding-right: 10px;
+    text-indent: 20px;
+}
+
+#funcbar li.func a {
+    color: #fff;
+}
+
+#funcbar li.func a:hover {
+    color: yellow;
+}
+
+#funcbar li.func span {
+    cursor: pointer;
+}
+
+#funcbar #personalInfo {
+    text-indent: 10px;
+    width: 200px;
+    color: #eee;
+}
+
+#funcbar #changeStation {
+    background: url("images/topbar/changeStation.png") no-repeat left 5px;
+}
+
+#funcbar #works {
+    background: url("images/topbar/works.png") no-repeat left 5px;
+}
+
+#funcbar #works.has {
+    background: url("images/topbar/works_has.gif") no-repeat left 5px;
+}
+
+#funcbar #messages {
+    background: url("images/topbar/messages.png") no-repeat left 5px;
+}
+
+#funcbar #messages.has {
+    background: url("images/topbar/messages_has.gif") no-repeat left 5px;
+}
+
+#funcbar #logout {
+    background: url("images/topbar/logout.png") no-repeat left 5px;
+}
+
+#funcbar .details {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    width: 479px;
+    height: 482px;
+    padding-top: 20px;
+    padding-left: 15px;
+    color: #000;
+}
+
+#funcbar #works .details {
+    right: -173px;
+    top: 28px;
+    background: url("images/topbar/works_bg.png") no-repeat;
+}
+
+#funcbar #messages .details {
+    right: -97px;
+    top: 28px;
+    background: url("images/topbar/messages_bg.png") no-repeat;
+}
+
+#funcbar .details li.title {
+    position: relative;
+    width: 450px;
+    height: 28px;
+    line-height: 28px;
+    background: url("images/topbar/bannerbar.png") no-repeat;
+}
+
+#funcbar .details li.title div {
+    top: 0;
+    position: absolute;
+    right: 4px;
+    width: 36px;
+    height: 20px;
+}
+
+#funcbar .details li.list {
+    width: 450px;
+    height: 410px;
+    text-align: left;
+    overflow: auto;
+}
+
+#funcbar .details li.list div {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    background: url("images/topbar/arrow.gif") no-repeat 3px center;
+}
+
+#funcbar .details li a div {
+    color: #000;
+    background-color: #fff;
+}
+
+#funcbar .details li a:hover div {
+    color: #000;
+    background-color: #CBE7FC;
+}
+
+#loading {
+    display: none;
+}
+
+.menus_container {
+    width: 90px;
+    padding: 10px 0px 0px 10px;
+    text-align: center;
+}
+
+.menu {
+    display: block;
+    width: 110px;
+    height: 110px;
+    background-color: transparent;;
+}
+
+.menu .menu_icon {
+    height: 85px;
+    background-repeat: no-repeat;
+    background-position: center 15px;
+}
+
+.menu .menu_title {
+    position: relative;
+}
+
+.menu .menu_title div {
+    height: 25px;
+    line-height: 16px;
+    color: #ccc;
+}
+
+.menu .menu_title .leftbg {
+    position: absolute;
+    left: -12px;
+    top: 0;
+    width: 12px;
+    background: url("images/icon/desktop.png") no-repeat 4px -55px;
+}
+
+.menu .menu_title .rightbg {
+    position: absolute;
+    right: -12px;
+    top: 0;
+    width: 12px;
+    background: url("images/icon/desktop.png") no-repeat -418px -55px;
+}
+
+.menu .menu_title .titlename {
+    display: inline-block;
+    position: relative;
+    color: #eee;
+    padding: 5px 0px;
+    background: url("images/icon/desktop.png") repeat-x scroll -20px -55px;
+}
+
+.rowspan {
+    width: 100%;
+    clear: both;
+    height: 10px;
+}
+
+.menu:hover {
+    background-image: url("images/icon/icon_focus_bg.png");
+    background-position: center 10px;
+    background-repeat: no-repeat;
+}
+
+#ContextMenu {
+    position: absolute;
+    z-index: 10000;
+    width: 150px;
+    right: 0;
+    top: 0;
+    border: 1px solid #666;
+    background: #fff;
+    display: none;
+    padding: 2px;
+}
+
+#ContextMenu li {
+    padding: 5px 5px 7px 5px;
+    float: none;
+    text-align: left;
+    text-indent: 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+#rightbar {
+    position: absolute;
+    right: -2px;
+    top: 67px;
+    height: 486px;
+    width: 79px;
+    z-index: 1;
+    background: url("images/newdesktop.png") no-repeat -169px -257px;
+}
+
+#rightbar .item {
+    position: relative;
+    text-align: center;
+    color: #eee;
+    width: 79px;
+    height: 75px;
+    background-image: url("images/newdesktop.png");
+    background-repeat: no-repeat;
+    vertical-align: text-bottom;
+}
+
+#rightbar .item span {
+    position: absolute;
+    left: 5px;
+    bottom: 6px;
+    width: 79px;
+    text-align: center;
+    background-image: url("images/rightbar/rightBar.png");
+    background-repeat: no-repeat;
+    background-position: left bottom;
+}
+
+#rightbar a {
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    zoom: 1;
+    height: 76px;
+    background-image: url("");
+    background-repeat: no-repeat;
+    background-position: left bottom;
+}
+
+#rightbar a:hover {
+    background-position: -142px 5px
+}
+
+#rightbar .person {
+    height: 80px;
+    left: 0;
+    top: 0;
+    cursor: pointer;
+}
+
+#rightbar .todo {
+    left: 0;
+    top: 90px;
+}
+
+#rightbar .email {
+    left: 0;
+    top: 160px;
+}
+
+#rightbar .apply {
+    left: 0;
+    top: 232px;
+}
+
+#rightbar .companyportal {
+    left: 0;
+    top: 305px;
+}
+
+#rightbar .theme {
+    left: 0;
+    top: 397px;
+    width: 40px;
+    height: 40px;
+}
+
+#rightbar .set {
+    left: 40px;
+    top: 397px;
+    width: 40px;
+    height: 40px;
+}
+
+#rightbar .personalportal {
+    left: 0;
+    top: 305px;;
+}
+
+#rightbar .logout {
+    left: 0;
+    top: 454px;
+    height: 30px;
+}
+
+#rightbar .person .item {
+    height: 80px;
+    background-position: -83px -260px;
+}
+
+#rightbar .todo .item {
+    background-position: -88px -346px;
+}
+
+#rightbar .email .item {
+    background-position: -88px -418px;
+}
+
+#rightbar .apply .item {
+    background-position: -88px -492px;
+}
+
+#rightbar .companyportal .item {
+    background-position: -88px -564px;
+}
+
+#rightbar .personalportal .item {
+    background-position: -88px -562px;
+}
+
+#rightbar .theme .item {
+    background-position: -88px -655px;
+    width: 40px;
+    height: 40px;
+}
+
+#rightbar .set .item {
+    background-position: -125px -655px;
+    width: 40px;
+    height: 40px;
+}
+
+#rightbar .logout .item {
+    height: 60px;
+    background-position: -88px -706px;
+    height: 30px;
+}
+
+#rightbar .person:hover .item {
+    height: 80px;
+    background-position: -2px -260px;
+}
+
+#rightbar .todo:hover .item {
+    background-position: -7px -346px;
+}
+
+#rightbar .email:hover .item {
+    background-position: -7px -418px;
+}
+
+#rightbar .apply:hover .item {
+    background-position: -7px -492px;
+}
+
+#rightbar .companyportal:hover .item {
+    background-position: -7px -564px;
+}
+
+#rightbar .personalportal:hover .item {
+    background-position: -7px -562px;
+}
+
+#rightbar .theme:hover .item {
+    background-position: -7px -655px;
+}
+
+#rightbar .set:hover .item {
+    background-position: -44px -655px;
+}
+
+#rightbar .logout:hover .item {
+    height: 60px;
+    background-position: -7px -706px;
+}
+
+#rightbar .item span.number {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 8px;
+    position: absolute;
+    left: 10px;
+    top: 0;
+    width: 40px;
+    height: 32px;
+    background-position: -80px -450px;
+}
+

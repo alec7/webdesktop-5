@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="WebDesktop,webOS,web,desktop,web桌面"/>
+    <title>Web桌面 - WebDesktop技术交流分享，集成平台供应,技术支持</title>
+    <link rel="stylesheet" href="@{'/public/desktop/css/base/addModule.css'}">
+    <script src="@{'/public/common/js/jquery-1.6.1.min.js'}"></script>
+    <script src="@{'/public/desktop/js/addModule.js'}"></script>
+    <script type="text/javascript">
+        var ctx = "${ctx}";
+    </script>
+</head>
+
+<body>
+<ul id="apps">
+#{list items:apps, as:'app'}
+%{
+    show = 1;
+    cssname = "";
+    }%
+	#{if app.isShow == 0}
+	%{
+        show = 0;
+        }%
+	#{/if}
+	#{if app.id == "1"}
+	%{
+        cssname = "focus";
+        }%
+	#{/if}
+	#{if show == 1}
+        <li class="${cssname}">${app.name}</li>
+	#{/if}
+#{/list}
+</ul>
+
+<div class="helper">请从下方选择您希望添加到桌面的应用菜单，点击"添加"按钮</div>
+<div id="modulecontainer">
+#{list items:apps, as:'app'}
+%{
+    style="style='display:none;'";
+    show = 1;
+    }%
+	#{if app.id == "1"}
+	%{
+        style="style='display:block;'";
+        }%
+	#{/if}
+	#{if app.isShow == 0}
+	%{
+        show = 0 ;
+        }%
+	#{/if}
+	#{if show == 1}
+        <div class="modules" ${style}>
+            <div style="border-bottom:1px solid #ccc;color:#666;font-size:14px;font-weight:bold;padding:5px 10px 5px 10px;">
+                应用列表
+            </div>
+			#{list items:app.modules, as:'m'}
+			%{
+                s = 1;
+                }%
+				#{if m.isShow == 0}
+				%{
+                    s = 0;
+                    }%
+				#{/if}
+				#{if s == 1}
+                    <ul class="module"
+                        style="background:url('@{'/public/desktop/css/base/images/icon'}/${m.icon}') no-repeat 20px center;">
+                        <li class="title">${m.name}
+                            <div class="add" onclick="javascript:addModule('${m.id}')"></div>
+                        </li>
+                        <li class="description">${m.remark?:''}</li>
+                    </ul>
+				#{/if}
+
+			#{/list}
+        </div>
+	#{/if}
+#{/list}
+</div>
+</body>
+</html>
+

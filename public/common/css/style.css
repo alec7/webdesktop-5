@@ -1,0 +1,1066 @@
+﻿body {
+    padding: 3px;
+    margin: 0;
+    font-family: '宋体', "微软雅黑";
+    font-size: 12px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+#pagebody {
+    padding: 0;
+}
+
+#pagebody_left {
+    overflow: auto;
+    width: 150px;
+    height: 400px;
+    border: 1px solid #5879A6;
+    position: absolute;
+    left: 3px;
+    top: 3px;
+    background: #fff;
+}
+
+#pagebody_center {
+    position: absolute;
+    width: 3px;
+    left: 155px;
+    cursor: w-resize;
+}
+
+#pagebody_right {
+    overflow: hidden;
+    margin-left: 155px;
+    height: 400px;
+    border: 1px solid #5879A6;
+    background: #fff;
+}
+
+#pagebody_left .menus {
+    margin: 0;
+    padding: 3px 0px;
+    font-size: 12px;
+}
+
+#pagebody_left .menus li {
+    padding: 2px;
+}
+
+#pagebody_left .menus li div {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    border: 1px solid #fff;
+    cursor: pointer;
+    height: 24px;
+    line-height: 24px;
+    text-indent: 26px;
+    background: url("images/tablegrid/note.png") no-repeat 5px center;
+}
+
+#pagebody_left .menus li div.focus {
+    background-color: #eee;
+    border: 1px solid #ccc;
+}
+
+#pagebody_left .menus li div.over {
+    background-color: #fdfdfd;
+    border: 1px solid #eee;
+}
+
+#pagebody_left .title {
+    text-align: left;
+    color: #374C68;
+    font-weight: bold;
+    height: 26px;
+    line-height: 26px;
+    text-indent: 5px;
+    background: url("images/tablegrid/bg.gif") repeat-x;
+    border-bottom: 1px solid #7099CE;
+}
+
+ul {
+    list-style-type: none;
+}
+
+form {
+    padding: 0;
+    margin: 0;
+}
+
+button {
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    margin-left: 5px;
+    height: 25px;
+    line-height: 25px;
+    background: url("images/list/button.gif") no-repeat left top;
+}
+
+button div {
+    margin-left: 2px;
+    padding: 0px 10px;
+    background: url("images/list/button.gif") no-repeat right top;
+}
+
+button.highlight {
+    margin: 0;
+    padding: 0;
+    margin-left: 5px;
+    border: 0;
+    height: 25px;
+    line-height: 25px;
+    background: url("images/list/button.gif") no-repeat left -35px;
+}
+
+button.highlight div {
+    margin-left: 2px;
+    padding: 0px 10px;
+    background: url("images/list/button.gif") no-repeat right -35px;
+}
+
+button.func {
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    margin-left: 5px;
+    height: 25px;
+    line-height: 25px;
+    background: url("images/add.gif") no-repeat left top;
+}
+
+button.func div {
+    color: #fff;
+    margin-left: 2px;
+    padding: 0px 10px;
+    background: url("images/add.gif") no-repeat right top;
+}
+
+.addbutton {
+    text-indent: 16px;
+    width: 76px;
+    height: 25px;
+    border: 0;
+    background: url("images/button/btn.png") no-repeat 2px 1px;
+}
+
+.savebutton {
+    text-indent: 16px;
+    width: 76px;
+    height: 25px;
+    border: 0;
+    background: url("images/button/btn.png") no-repeat -286px 1px;
+}
+
+.backbutton {
+    text-indent: 16px;
+    width: 76px;
+    height: 25px;
+    border: 0;
+    background: url("images/button/btn.png") no-repeat -95px 1px;
+}
+
+.cancelbutton {
+    text-indent: 16px;
+    width: 76px;
+    height: 25px;
+    border: 0;
+    background: url("images/button/btn.png") no-repeat -382px 1px;
+}
+
+.findbutton {
+    text-indent: 16px;
+    width: 76px;
+    height: 25px;
+    border: 0;
+    background: url("images/button/btn.png") no-repeat -480px 1px;
+}
+
+.submitbutton {
+    text-indent: 16px;
+    width: 76px;
+    height: 25px;
+    border: 0;
+    background: url("images/button/btn.png") no-repeat -191px 1px;
+}
+
+.resetbutton {
+    text-indent: 16px;
+    width: 76px;
+    height: 25px;
+    border: 0;
+    background: url("images/button/btn.png") no-repeat -382px 1px;
+}
+
+.viewopt {
+    padding: 2px 0px 2px 18px;
+    margin-right: 5px;
+    background: url("images/button/opt.png") no-repeat 0px -21px;
+}
+
+.editopt {
+    padding: 2px 0px 2px 18px;
+    margin-right: 5px;
+    background: url("images/button/opt.png") no-repeat 0px 0px;
+}
+
+.deleteopt {
+    padding: 2px 0px 2px 18px;
+    margin-right: 5px;
+    background: url("images/button/opt.png") no-repeat 0px -42px;
+}
+
+.dealopt {
+    padding: 2px 0px 2px 18px;
+    margin-right: 5px;
+    background: url("images/button/opt.png") no-repeat 0px -63px;
+}
+
+/* 全局样式 */
+.center {
+    text-align: center;
+}
+
+.left {
+    text-align: left;
+}
+
+.right {
+    text-align: right;
+}
+
+.top {
+    vertical-align: top;
+}
+
+.middle {
+    vertical-align: middle;
+}
+
+.bottom {
+    vertical-align: bottom;
+}
+
+.highlight {
+    font-size: 14px;
+    color: red;
+}
+
+i {
+    color: red;
+    padding: 0px 2px;
+}
+
+.rowspan {
+    height: 5px;
+    line-height: 5px;
+    width: 100%;
+    clear: both;
+}
+
+.txt {
+    border: 1px solid #999;
+    width: 180px;
+    height: 20px;
+}
+
+.longtxt {
+    border: 1px solid #999;
+    width: 400px;
+    height: 20px;
+}
+
+.txtarea {
+    border: 1px solid #999;
+    width: 400px;
+    height: 120px;
+}
+
+.width20 {
+    width: 20px;
+}
+
+.width30 {
+    width: 30px;
+}
+
+.width40 {
+    width: 40px;
+}
+
+.width50 {
+    width: 50px;
+}
+
+.width60 {
+    width: 60px;
+}
+
+.width70 {
+    width: 70px;
+}
+
+.width80 {
+    width: 80px;
+}
+
+.width90 {
+    width: 90px;
+}
+
+.width100 {
+    width: 100px;
+}
+
+.width110 {
+    width: 110px;
+}
+
+.width120 {
+    width: 120px;
+}
+
+.width140 {
+    width: 140px;
+}
+
+.width150 {
+    width: 150px;
+}
+
+.width160 {
+    width: 160px;
+}
+
+.width170 {
+    width: 170px;
+}
+
+.width180 {
+    width: 180px;
+}
+
+.width190 {
+    width: 190px;
+}
+
+.width200 {
+    width: 200px;
+}
+
+.width210 {
+    width: 210px;
+}
+
+.width220 {
+    width: 220px;
+}
+
+.width230 {
+    width: 230px;
+}
+
+.width240 {
+    width: 240px;
+}
+
+.width300 {
+    width: 300px;
+}
+
+.overflow {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.tablegrid {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0px;
+    table-layout: fixed;
+}
+
+.tablegrid caption {
+    position: relative;
+}
+
+.tablegrid caption .funcs {
+    position: absolute;
+    right: 5px;
+    top: 1px;
+}
+
+.tablegrid thead {
+    background: url("images/tablegrid/thead_bg.gif") repeat-x;
+}
+
+.tablegrid thead th {
+    padding: 0px 5px;
+    white-space: nowrap;
+    height: 22px;
+    line-height: 22px;
+    font-weight: normal;
+    border-bottom: 1px solid #7099CE;
+    border-right: 1px solid #AEC9EC;
+}
+
+.tablegrid tbody td {
+    padding: 4px 5px;
+    border-bottom: 1px solid #E1EBF9;
+    -webkit-text-size-adjust: none;
+}
+
+.tablegrid .opts {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.tablegrid .opts li {
+    float: left;
+    text-indent: 18px;
+    margin-left: 5px;
+}
+
+.tablegrid .opts li.add {
+    background: url("images/tablegrid/add.gif") no-repeat;
+}
+
+.tablegrid .opts li.edit {
+    background: url("images/tablegrid/edit.gif") no-repeat;
+}
+
+.tablegrid .opts li.delete {
+    background: url("images/tablegrid/delete.gif") no-repeat;
+}
+
+.tablegrid .date {
+    font-size: 8px;
+}
+
+.tablegrid tfoot td {
+    padding: 4px 5px;
+    border-bottom: 1px solid #E1EBF9;
+}
+
+.tablegrid tr.odd {
+    background-color: #fff;
+}
+
+.tablegrid tr.even {
+    background-color: #F7FAFD;
+}
+
+.tablegrid tr.over {
+    background-color: #CCDCFB;
+}
+
+.worktitle {
+    text-align: left;
+    color: #374C68;
+    height: 26px;
+    line-height: 26px;
+    text-indent: 5px;
+    background: url("images/tablegrid/bg.gif") repeat-x;
+    border-bottom: 1px solid #7099CE;
+}
+
+.worktitle span {
+    padding: 0px 10px;
+}
+
+.worktitle span.title {
+    padding: 5px 5px 5px 20px;
+    background: url("images/tablegrid/title.gif") no-repeat left 4px;
+}
+
+.worktitle span.split {
+    padding: 5px 5px;
+    background: url("images/tablegrid/nav_split.gif") no-repeat left top;
+}
+
+.worktitle .funcs {
+    position: absolute;
+    right: 5px;
+    padding-right: 25px;
+}
+
+.worktitle .funcs a {
+    cursor: pointer;
+    position: absolute;
+    border: 1 p solid transparent;
+    right: 3px;
+    top: 3px;
+    width: 20px;
+    height: 16px;
+    background: url("images/tablegrid/advfind.gif") no-repeat left 1px;
+}
+
+.worktitle .funcs a:hover {
+    border: 1px solid #5C7CA0;
+    background-color: #8CAED5;
+}
+
+.workfind {
+    padding: 5px;
+    border-bottom: 1px solid #7099CE;
+    overflow: auto;
+    zoom: 1;
+    display: none;
+    background: #F5F9FD url("images/tablegrid/search.gif") no-repeat 30px center;
+}
+
+.workfind .findbutton {
+    width: 80px;
+    height: 60px;
+}
+
+.workfind .advfindbutton {
+    width: 80px;
+    height: 60px;
+}
+
+.workfind table {
+    float: right;
+}
+
+.workdescription {
+    padding: 5px 10px;
+    color: #666;
+}
+
+.workinfo {
+    padding: 10px;
+}
+
+.workinfo fieldset {
+    border: none;
+    border-top: 1px solid #eee;
+}
+
+.workinfo fieldset legend {
+    font-weight: bold;
+    color: #C60000;
+    margin: 8px 0px;
+}
+
+.workinfo fieldset table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.workinfo fieldset table tr {
+    height: 28px;
+}
+
+.workinfo fieldset table tr td {
+    border-bottom: 1px dotted #ccc;
+}
+
+.workinfo fieldset table .buttonrow {
+    padding-left: 40px;
+    text-align: left;
+    padding-top: 15px;
+}
+
+.workinfo fieldset table .title {
+    color: #666;
+    background: #f9f9f9;
+    white-space: nowrap;
+}
+
+.workinfo i {
+    color: red;
+    padding: 0px 5px;
+}
+
+.workinfo label.error {
+    color: red;
+    padding: 5px 10px 5px 20px;
+    background: url("images/list/error.gif") no-repeat 0px 5px;
+    display: -moz-inline-box;
+    display: inline-block;
+}
+
+/* ajax样式 */
+.ajax_shade {
+    position: absolute;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    text-align: center;
+}
+
+.ajax_shade_confirm {
+    position: absolute;
+    z-index: 11;
+    width: 360px;
+    padding: 20px 20px 50px 20px;
+    font-size: 14px;
+    border: 1px solid #666;
+    background: #ddd;
+    background: #fff url("images/progress/18.gif") no-repeat center 50px;
+}
+
+/************************进度条*****************************/
+.ajax_progress_iframe {
+    z-index: 10;
+    position: absolute;
+    border: 0;
+}
+
+.ajax_progress {
+    position: absolute;
+    z-index: 100000;
+    border: 1px solid #8bb0ff;
+    font-size: 14px;
+    font-family: '微软雅黑';
+    text-align: center;
+    color: #1a396f;
+    background: #ebf7ff url("images/progress/spg-loading.gif") no-repeat center 35px;
+}
+
+/*************************************************************/
+
+/***************************popup弹出窗口**************************/
+#spgoa_popup_win {
+    position: absolute;
+    border: 1px solid #333;
+    backgroundColor: #fff;
+    zIndex: 1000
+}
+
+#spgoa_popup_win .popuptitle {
+    text-indent: 15px;
+    height: 30px;
+    line-height: 30px;
+    background: #eee;
+    border-bottom: 1px solid #ccc;
+}
+
+#spgoa_popup_win .popupfooter {
+    height: 30px;
+    line-height: 30px;
+    background: #eee;
+    text-align: center;
+    border-top: 1px solid #ccc;
+}
+
+#spgoa_popup_win .popupcontent {
+    position: relative;
+    overflow: auto;
+    background: url("images/progress/05.gif") no-repeat 0px 2000px;
+}
+
+#spgoa_popup_win .popupcontent.progress {
+    background-position: center center;
+}
+
+#spgoa_popup_iframe {
+    position: absolute;
+    zIndex: 10
+}
+
+/********************翻页开始***********************/
+.navigator {
+    height: 28px;
+    line-height: 28px;
+    text-align: left;
+}
+
+.navigator a {
+    font-size: 14px;
+    font-family: verdana;
+    padding: 3px 6px;
+    margin-right: 5px;
+    border: 1px solid #ccc;
+    background: #eee;
+}
+
+.navigator a:hover {
+    font-size: 14px;
+    background: #ccc;
+}
+
+.nav-title {
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.nav-current {
+    color: red;
+    font-weight: 700;
+    font-size: 14px;
+    font-family: verdana;
+    padding: 3px 6px;
+    margin-right: 5px;
+}
+
+.nav-page {
+}
+
+.nav-last {
+}
+
+/* 成功错误提醒页面样式  */
+.successcontainer {
+    width: 100%;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.success {
+    width: 370px;
+    height: 100px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    padding-left: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    background: url("images/success.gif") no-repeat 20px center;
+}
+
+.success_title {
+    height: 70px;
+    text-align: left;
+    font-size: 14px;
+}
+
+.success_opts {
+    text-align: center;
+}
+
+.faulecontainer {
+    width: 100%;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.faule {
+    width: 370px;
+    height: 100px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    padding-left: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    background: url("images/faule.gif") no-repeat 20px center;
+}
+
+.faule_title {
+    height: 70px;
+    text-align: left;
+    font-size: 14px;
+}
+
+.faule_opts {
+    text-align: center;
+}
+
+/* 成功错误提醒页面样式结束  */
+
+.newwin {
+    position: absolute;
+    width: 400px;
+    text-align: left;
+    border: 1px solid #808080;
+}
+
+.newwin .wintitle {
+    font-family: "宋体";
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    height: 28px;
+    line-height: 28px;
+    text-indent: 15px;
+    background: url("images/window/newwindow.png") repeat-x 0px -96px;
+}
+
+.newwin .wintitle span {
+    position: absolute;
+    display: block;
+    background-image: url("images/window/newwindow.png");
+}
+
+.newwin .wintitle span.min {
+    right: 70px;
+    top: 6px;
+    width: 25px;
+    height: 15px;
+    background-position: -0px -0px;
+}
+
+.newwin .wintitle span.min.focus {
+    background-position: -0px -17px;
+}
+
+.newwin .wintitle span.max {
+    right: 40px;
+    top: 6px;
+    width: 25px;
+    height: 15px;
+    background-position: -29px -0px;
+}
+
+.newwin .wintitle span.max.focus {
+    background-position: -29px -17px;
+}
+
+.newwin .wintitle span.close {
+    cursor: pointer;
+    right: 10px;
+    top: 6px;
+    width: 25px;
+    height: 15px;
+    background-position: -58px -0px;
+}
+
+.newwin .wintitle span.close.focus {
+    background-position: -58px -17px;
+}
+
+.newwin .wintitle span.restore {
+    right: 40px;
+    top: 6px;
+    width: 25px;
+    height: 15px;
+    background-position: -87px -17px;
+    display: none;
+}
+
+.newwin .wintitle span.restore.focus {
+    background-position: -87px -17px;
+}
+
+.newwin .winfunc {
+    position: relative;
+    height: 36px;
+    line-height: 36px;
+    background-color: #D4D4D4;
+}
+
+.newwin .winfunc a {
+    position: absolute;
+    top: 6px;
+    width: 63px;
+    height: 22px;
+    background-image: url("images/window/newwindow.png");
+}
+
+.newwin .winfunc .home {
+    left: 20px;
+    background-position: -18px -42px;
+}
+
+.newwin .winfunc .home:hover {
+    background-position: -18px -66px;
+}
+
+.newwin .winfunc .back {
+    left: 100px;
+    background-position: -85px -42px;
+}
+
+.newwin .winfunc .back:hover {
+    background-position: -85px -66px;
+}
+
+.newwin .winfunc .prev {
+    left: 180px;
+    background-position: -152px -42px;
+}
+
+.newwin .winfunc .prev:hover {
+    background-position: -152px -66px;
+}
+
+.newwin .winfunc .refresh {
+    left: 260px;
+    background-position: -219px -42px;
+}
+
+.newwin .winfunc .refresh:hover {
+    background-position: -219px -66px;
+}
+
+.newwin .wincontent {
+    position: relative;
+    height: 300px;
+    background: #fff;
+    overflow: hidden;
+}
+
+.newwin .wincontent iframe {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 300px;
+    width: 374px;
+    border: 0;
+}
+
+.newwin .wincontent .iframecover {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 300px;
+    width: 374px;
+    background: #eee url(images/loading.gif) no-repeat center center;
+}
+
+.newwin .winbottom {
+    height: 10px;
+    background: url("images/window/newwindow.png") repeat-x 0px -258px;
+}
+
+.newwin .resizehandle {
+    position: absolute;
+    right: 2px;
+    bottom: 0px;
+    width: 10px;
+    height: 10px;
+    background: url("images/window/newwindow.png") no-repeat 3px -243px;
+}
+
+.hiddenTr {
+    display: none;
+}
+
+.fileType {
+    float: left;
+    width: 21px;
+    background: url("images/word.jpg") no-repeat;
+    height: 21px;
+    margin-right: 8px;
+    margin-left: 8px;
+    position: relative;
+    top: 3px;
+}
+
+.wordFile {
+    float: left;
+    width: 21px;
+    background: url("images/word.jpg") no-repeat;
+    height: 21px;
+    margin-right: 8px;
+    margin-left: 8px;
+    position: relative;
+    top: 3px;
+}
+
+.excelFile {
+    float: left;
+    width: 21px;
+    background: url("images/excel.jpg") no-repeat;
+    height: 21px;
+    margin-right: 8px;
+    margin-left: 8px;
+    position: relative;
+    top: 3px;
+}
+
+.pdfFile {
+    float: left;
+    width: 21px;
+    background: url("images/pdf.jpg") no-repeat;
+    height: 21px;
+    margin-right: 8px;
+    margin-left: 8px;
+    position: relative;
+    top: 3px;
+}
+
+.onLineEdit {
+    float: left;
+    width: 143px;
+    background: url("images/edit.jpg") no-repeat;
+    height: 27px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.onLineLook {
+    float: left;
+    width: 113px;
+    background: url("images/look.jpg") no-repeat;
+    height: 27px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.onLineDownLoad {
+    float: left;
+    width: 83px;
+    background: url("images/download.jpg") no-repeat;
+    height: 27px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.onLineDelete {
+    float: left;
+    width: 142px;
+    background: url("images/delete.jpg") no-repeat;
+    height: 27px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.onLineHistory {
+    float: left;
+    width: 111px;
+    background: url("images/history.jpg") no-repeat;
+    height: 27px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.attachmentfileName {
+    font-size: 14;
+    font-weight: blod;
+    color: red;
+    float: left;
+    height: 28px;
+    line-height: 28px;
+}
+
+.showAllImg {
+    position: relative;
+    right: 93px;
+    float: right;
+    width: 13px;
+    height: 13px;
+    background: url("images/down.gif") no-repeat;
+}
+
+.showAllDIV {
+    width: 120px;
+    height: 100%;
+    float: right;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.hideAllImg {
+    position: relative;
+    right: 93px;
+    float: right;
+    width: 13px;
+    height: 13px;
+    top: -1px;
+    background: url("images/up.gif") no-repeat;
+}
+
+

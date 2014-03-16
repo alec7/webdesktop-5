@@ -1,0 +1,121 @@
+<!--
+body, div, ul, li {
+    padding: 0;
+    text-align: center;
+}
+
+body {
+    font: 12px "宋体";
+    text-align: center;
+}
+
+a:link {
+    color: #00F;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #00F;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #c00;
+    text-decoration: underline;
+}
+
+ul {
+    list-style: none;
+}
+
+/*选项卡1*/
+#Tab1 {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    margin: 0 auto;
+}
+
+/*选项卡2*/
+#Tab2 {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    margin: 0 auto;
+}
+
+/*菜单class*/
+.Menubox {
+    width: 100%;
+    background: url(libg.jpg);
+    background-repeat: repeat-x;
+    height: 40px;
+    line-height: 28px;
+}
+
+.Menubox ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+.Menubox li {
+    float: left;
+    margin-top: 12px;
+    margin-left: 10px;
+    display: block;
+    cursor: pointer;
+    width: 85px;
+    height: 20px;
+    background: url(tab2.jpg);
+    text-align: center;
+    color: #777a7f;
+    line-height: 33px;
+}
+
+.Menubox li.hover {
+    padding: 0px;
+    margin-top: 12px;
+    width: 85px;
+    height: 20px;
+    background: url(tab1.jpg);
+    color: #385b7b;
+    font-weight: bold;
+    line-height: 33px;
+}
+
+.Contentbox {
+    clear: both;
+    margin-top: 0px;
+    border-top: none;
+    text-align: center;
+    padding-top: 8px;
+}
+
+.picbg {
+    width: 158px;
+    height: 198px;
+    margin-top: 10px;
+    margin-left: 10px;
+    background-image: url(pic.jpg);
+    padding: 2px;
+}
+
+.picbg2 {
+    width: 158px;
+    height: 198px;
+}
+
+.gouri01 {
+    width: 90px;
+    float: left;
+    text-align: left;
+    color: #1d3654;
+}
+
+.gouri02 {
+    width: 200px;
+    float: left;
+    text-align: left;
+}
+
+-->

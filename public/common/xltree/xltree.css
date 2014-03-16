@@ -1,0 +1,88 @@
+﻿.tree {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    font-size: 12px;
+    padding: 0px;
+    zoom: 1;
+}
+
+.tree ul {
+    margin: 0;
+    padding: 0;
+    padding-left: 18px;
+    list-style-type: none;
+    display: none;
+}
+
+.tree a {
+    display: block;
+    float: left;
+    margin-left: 38px;
+    padding: 2px 3px;
+    color: #000;
+    text-decoration: none;
+    border: 1px solid #fff;
+    white-space: nowrap;
+}
+
+.tree a:hover {
+    border: 1px solid #C4DDF7;
+}
+
+.tree a.click {
+    background: #1467BA;
+    border: 1px solid #073665;
+    color: #eee;
+}
+
+.tree a span {
+    display: inline;
+    color: #ccc;
+    font-size: 12px;
+}
+
+.tree li {
+    pisition: fixed;
+    margin: 0;
+    clear: both;
+    padding: 1px 0px;
+}
+
+.tree li div {
+    position: relative;
+    zoom: 1;
+}
+
+.tree li .openorclose, .tree li .icon {
+    display: block;
+    float: left;
+    padding: 2px 8px;
+    height: 16px;
+}
+
+.tree .openorclose {
+    cursor: default;
+    position: absolute;
+    left: 0;
+}
+
+.tree .openorclose.close {
+    background: url("images/plus.gif") no-repeat center center;
+}
+
+.tree .openorclose.open {
+    background: url("images/minus.gif") no-repeat center center;
+}
+
+.tree .openorclose.none {
+    background: none;
+}
+
+.tree .icon {
+    cursor: pointer;
+    position: absolute;
+    left: 18px;
+    background: url("images/folder.gif") no-repeat left center;
+}
+

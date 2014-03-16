@@ -1,0 +1,90 @@
+body {
+    font-size: 12px;
+    padding: 0px;
+    margin: 0;
+    background: #fff;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.helper {
+    background: #ccc;
+    text-align: right;
+    color: #000;
+    padding-right: 10px;
+    height: 30px;
+    line-height: 30px;
+    border-bottom: 1px solid #999;
+}
+
+#apps {
+    position: absolute;
+    left: 5px;
+    top: 38px;
+}
+
+#apps li {
+    text-align: left;
+    text-indent: 30px;
+    cursor: pointer;
+    width: 150px;
+    height: 31px;
+    line-height: 31px;
+    margin-bottom: 5px;
+    background-image: url('images/modules.png');
+}
+
+#apps li.over {
+    background-position: 0px -31px;
+}
+
+#apps li.focus {
+    background-position: 0px -62px;
+}
+
+#modulecontainer {
+    margin-left: 155px;
+    padding: 10px;
+    background: #fff;
+    border-left: 1px solid #999;
+    border-bottom: 1px solid #999;
+}
+
+.modules {
+    margin-bottom: 20px;
+}
+
+.modules .module {
+    padding-left: 80px;
+    border-bottom: 1px dotted #666;
+}
+
+.modules .module li {
+    padding: 10px;
+}
+
+.modules .module li.title {
+    position: relative;
+    color: #333;
+    font-weight: bold;
+    padding: 15px 5px 5px 25px;
+}
+
+.modules .module li .add {
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 8px;
+    width: 61px;
+    height: 22px;
+    background: url("images/add.png") no-repeat;
+}
+
+.modules .module li.description {
+    color: #666;
+    padding-left: 25px;
+}

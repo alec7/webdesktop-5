@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html class=" javascriptEnabled win6_1 chrome chrome14_0 webkit webkit535_1 flash flash11_0"
+      style="overflow-x: hidden; overflow-y: hidden; ">
+<head>
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <meta charset="${_response_encoding}">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta name="keywords" content="WebDesktop,webOS,web,desktop,web桌面"/>
+    <meta http-equiv="x-ua-compatible" content="ie=7"/>
+
+    <title>Web桌面 - WebDesktop技术交流分享，集成平台供应,技术支持</title>
+
+    <link rel="stylesheet" media="screen" href="@{'/public/common/css/style.css'}">
+    <link rel="stylesheet" media="screen" href="@{'/public/desktop/css/base/desktop.css'}">
+    <link id="theme_css" rel="stylesheet" href="@{'public/desktop/css/themes/theme_css_'+(userdesktop.themeId)+'.css'}">
+    <link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}">
+    <script src="@{'/public/common/js/jquery-1.6.1.min.js'}" type="text/javascript"></script>
+    <script src="@{'/public/common/js/jquery-ui.min.js'}" type="text/javascript"></script>
+
+    <script src="@{'/public/common/js/base.js'}" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        var ctx = '${ctx}';
+        var json_data = '${userdesktop?.desktopJsonView?.raw()}';
+    </script>
+    <script src="@{'/public/desktop/js/desktop.js'}" type="text/javascript"></script>
+
+    <!--[if IE 6]>
+	<script type="text/javascript" src="@{'/public/desktop/js/DD_belatedPNG_0.0.8a.js'}"></script>
+	<script type="text/javascript">
+		var pngclasses = [];
+		pngclasses[pngclasses.length] = "#pagetabbar .leftbg";
+		pngclasses[pngclasses.length] = "#pagetabs";
+		pngclasses[pngclasses.length] = "#pagetabbar .rightbg";
+		pngclasses[pngclasses.length] = "#pagetabbar #pagetabs a";
+		pngclasses[pngclasses.length] = "#pagetabbar .person";
+		pngclasses[pngclasses.length] = "#pagetabbar .theme";
+		pngclasses[pngclasses.length] = ".menu .menu_icon";
+		pngclasses[pngclasses.length] = ".menu .menu_title .leftbg";
+		pngclasses[pngclasses.length] = ".menu .menu_title .rightbg";
+		pngclasses[pngclasses.length] = ".menu .menu_title .titlename";
+		pngclasses[pngclasses.length] = ".menu:hover";
+
+		pngclasses[pngclasses.length] = "#taskbar";
+		pngclasses[pngclasses.length] = "#taskbar li";
+
+		pngclasses[pngclasses.length] = ".win .wintitle";
+		pngclasses[pngclasses.length] = ".win span";
+		pngclasses[pngclasses.length] = ".win .winbottom";
+		pngclasses[pngclasses.length] = "#logo";
+		pngclasses[pngclasses.length] = "#funcbar";
+		pngclasses[pngclasses.length] = "#funcbar #changeStation";
+		pngclasses[pngclasses.length] = "#funcbar #works";
+		pngclasses[pngclasses.length] = "#funcbar #messages";
+		pngclasses[pngclasses.length] = "#funcbar #messages.has";
+		pngclasses[pngclasses.length] = "#funcbar #logout";
+
+		pngclasses[pngclasses.length] = "#pagetop";
+		pngclasses[pngclasses.length] = "#pagetop #banner";
+		pngclasses[pngclasses.length] = "#pagetop .workDiv";
+		pngclasses[pngclasses.length] = "#pagetop .workDiv span";
+
+		pngclasses[pngclasses.length] = "#rightbar,#rightbar .item,#rightbar .item span";
+
+		DD_belatedPNG.fix(pngclasses.join(","));
+	</script>
+    <![endif]-->
+
+</head>
+<body>
+
+<div id="pagetop">
+    <div id="banner"></div>
+
+
+    <div style="align:right">
+        <div class="workDiv companyportal" id="company"><a
+                onclick="javascript:var win = DesktopInterface.open({id:'window_100',title:'企业门户',url:'#',width:1000,height:500});"
+                title="企业门户">企业门户</a></div>
+        <div class="workDiv personalportal" id="personal"><a
+                onclick="javascript:var win = DesktopInterface.open({id:'window_100',title:'个人门户',url:'#',width:1000,height:500});"
+                title="个人门户">个人门户</a></div>
+    </div>
+
+
+</div>
+<div id="pagetabbar">
+    <div class="leftbg"></div>
+    <div class="rightbg"></div>
+    <ul id="pagetabs">
+        <li><a href="javascript:Body.personal()" class="person"></a></li>
+        <li class="tasksli"><a class="tasks"></a></li>
+        <li><a class="msgs"></a></li>
+        <li><a class="logout"></a></li>
+        <li style="display:none;"><a href="javascript:Body.selectThemes(this);" class="theme"></a></li>
+    </ul>
+</div>
+
+<div id="pages">
+</div>
+
+<div id="rightbar">
+    <a class="person" title='查看个人信息'
+       onclick="javascript:DesktopInterface.open({id:'window_0',title:'我的信息',url:'platform/desktop/userdesktop/get_my_info.shtml',width:600,height:400})">
+        <div class="item"><span>${(view?.station?.employee?.name)}</span></div>
+    </a>
+    <a class="todo" title='进入个人待办事宜页面'
+       onclick="javascript:var win = DesktopInterface.open({id:'window_1',title:'我的待办任务列表',url:'#',width:1000,height:500});win.max();">
+        <div class="item"><span>待办(0)</span></div>
+    </a>
+    <a class="email" title='进入个人邮件中心'
+       onclick="javascript:var win = DesktopInterface.open({id:'window_2',title:'我的个人邮箱',url:'#',width:1000,height:500});win.max();">
+        <div class="item"><span>邮件(0)</span></div>
+    </a>
+    <a class="apply" title='进入我的申请'
+       onclick="javascript:var win = DesktopInterface.open({id:'window_4',title:'我的申请',url:'#',width:1000,height:500});win.max();">
+        <div class="item"><span>我的申请</span></div>
+    </a>
+    <a class="companyportal" title='进入个人阅读箱'
+       onclick="javascript:var win = DesktopInterface.open({id:'window_3',title:'阅读箱',url:'#',width:1000,height:500});win.max();">
+        <div class="item"><span>阅读箱(0)</span></div>
+    </a>
+*{<!-- <a class="companyportal" title='进入企业门户界面' onclick="javascript:var win = DesktopInterface.open({id:'window_3',title:'企业门户',url:'oa/portal/company/get_portal.shtml',width:1000,height:500});win.max();"><div class="item"><span>企业门户</span></div></a> -->}*
+*{<!-- a class="personalportal" title='进入个人门户界面' onclick="javascript:DesktopInterface.open({id:'window_4',title:'个人门户',url:'oa/portal/personal/personal_page.shtml',width:1000,height:500})"><div class="item"><span>个人门户</span></div></a -->}*
+
+    <a class="theme" title='换肤'
+       onclick="javascript:DesktopInterface.open({id:'window_5',title:'换肤',url:'platform/desktop/theme/query.shtml',width:600,height:400})">
+        <div class="item"><span></span></div>
+    </a>
+    <a class="set" title='个人设置'
+       onclick="javascript:DesktopInterface.open({id:'window_6',title:'个人设置',url:'#',width:1000,height:500})">
+        <div class="item"><span></span></div>
+    </a>
+
+    <a class="logout" title='安全退出办公系统' onclick="javascript:logout();">
+        <div class="item"><span></span></div>
+    </a>
+</div>
+
+<ul id="funcbar">
+    <li class="func" id="personalInfo">您好: ${(view?.station?.employee?.name)} [ ${(view?.station?.position?.name)}]
+    </li>
+    <li class="func" id="changeStation" style="display:none;">切换身份</li>
+    <li class="func" id="works"><span>待办事宜(0)</span>
+        <ul class="details">
+            <li class="title">我的所有待办事宜
+                <div></div>
+            </li>
+            <li class="list">
+            </li>
+        </ul>
+    </li>
+    <li class="func" id="messages"><span><a href="${ctx}/oa/email/core/index.shtml" target="_blank">邮件(0)</a></span>
+        <ul class="details">
+            <li class="title">未读邮件
+                <div></div>
+            </li>
+            <li class="list">
+                <a href="#">
+                    <div class="overflow">目前没有您的邮件</div>
+                </a>
+
+            </li>
+        </ul>
+    </li>
+    <li class="func" id="logout"><span><a href="javascript:logout();">退出系统</a></span></li>
+</ul>
+
+<div id="taskbar">
+    <ul id="tasks">
+    </ul>
+</div>
+
+<div style='position:absolute;display:none;bottom:100px;right:50px;'>
+    <input type="text" id="id"/>
+    <input type="text" id="title"/>
+    <input type="button" value="add"
+           onclick="DesktopInterface.addWork($('#id').val(),$('#title').val(),'http://www.baidu.com')"/>
+    <input type="button" value="remove" onclick="DesktopInterface.removeWork($('#id').val())"/>
+</div>
+</body>
+</html>

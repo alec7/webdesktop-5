@@ -1,0 +1,210 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="/spgoa/resource/common/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/spgoa/resource/weboffice/weboffice.css">
+    <script type="text/javascript" language="javascript" src="jquery-1.6.1.min.js"></script>
+    <script type="text/javascript" language="javascript" src="jquery.validate.js"></script>
+    <script type="text/javascript" language="javascript" src="/spgoa/resource/common/js/base.js"></script>
+    <script type="text/javascript" language="javascript" src="/spgoa/resource/weboffice/weboffice.js"></script>
+    <!-- <script type="text/javascript" src="/spgoa/resource/common/office/OfficeContorlFunctions.js"></script> -->
+
+
+    <style>
+        .tabcontainer {
+            display: none;
+        }
+
+        .show {
+            display: block;
+        }
+    </style>
+    <script language="javascript">
+        function validateForm() {
+            return $("#frm").validate({
+                rules: {
+                    title: "required"
+                },
+                messages: {
+                    title: "�ļ����ⲻ��Ϊ��"
+                }
+            }).form();
+        }
+
+        var hasEdit = false;
+        function save() {
+            alert(validateForm());
+            $("#submitType").val("save");
+        }
+        function submitServer() {
+            $("#submitType").val("submit");
+            if (hasEdit == false) {
+                alert("���ϴ���༭���� ");
+                return false;
+            }
+
+            var weboffice = document.getElementById("TANGER_OCX");
+
+            //weboffice.SaveToURL("/spgoa/oa/weboffice/send/apply.shtml?workflowView.process.processDefinitionCode=yf_send","upload","","����.doc","frm")
+
+            alert("success");
+            //$("#frm")[0].submit();
+        }
+    </script>
+
+</head>
+
+<body>
+
+
+<form id="frm" name="frm" method="post" enctype="multipart/form-data">
+    <input type="hidden" id="submitType" name="workflowView.process.submitType"/>
+
+    <div>
+        <div style="position:absolute;right:5px;top:6px;">
+            <button type="submit" class="highlight showprogress" onclick="save()">
+                <div>����ݸ�</div>
+            </button>
+            <button type="button" class="highlight" onclick="submitServer()">
+                <div>�ύ</div>
+            </button>
+        </div>
+        <ul class="tabs">
+            <li style="width:120px;" class="focus">
+                <div class="fm">���ķ���</div>
+            </li>
+            <li style="width:95px;" view="online.shtml">
+                <div>�༭����</div>
+            </li>
+            <li style="width:110px;" view="">
+                <div>����ͼ</div>
+            </li>
+            <li style="width:125px;" view="">
+                <div>������</div>
+            </li>
+        </ul>
+        <div class="tabcontainers">
+            <div class="tabcontainer show">
+
+
+                <h2>����ʡ�ط����������ţ����޹�˾���ĸ���ҳֽ</h2>
+
+                <table class="businesstable" style="width:800px;">
+                    <colgroup>
+                        <col style="width:3.3cm"></col>
+                        <col style="width:4.5cm"></col>
+                        <col style="width:3.3cm"></col>
+                        <col></col>
+                    </colgroup>
+                    <tr>
+                        <td class="title">�ļ�����</td>
+                        <td align="center" colspan="3"><input type="text" name="title" value="" id="title" class="txt"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="title">�� �� ��</td>
+                        <td align="center">
+                            <div class="property">�콨</div>
+                        </td>
+                        <td class="title">��岿��</td>
+                        <td align="center">
+                            <div class="property">�з���</div>
+                        </td>
+
+
+                    </tr>
+                    <tr>
+                        <td class="title">�����̶�</td>
+                        <td align="center" valign="middle">
+                            <div class="property">
+                                <select name="view.send.hurry" class="">
+                                    <option value="1">��ͨ</option>
+                                    <option value="2">����</option>
+                                    <option value="3">�ؼ�</option>
+                                </select></div>
+                        </td>
+                        <td class="title">���̶ܳ�</td>
+                        <td align="center" valign="middle">
+                            <div class="property">
+                                <select name="view.send.secret" class="">
+                                    <option value="1">����</option>
+                                    <option value="2">����</option>
+                                    <option value="3">����</option>
+                                </select></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="title">������</td>
+                        <td><input type="text" name="view.send.mainSend" value="" id="view_send_mainSend" class=" txt"
+                                   title="���Ͳ���Ϊ��"/>
+                        </td>
+                        <td class="title">������</td>
+                        <td><input type="text" name="view.send.secondarySend" value="" id="view_send_secondarySend"
+                                   class=" txt" title="���Ͳ���Ϊ��"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="title">�ݡ���</td>
+                        <td><input type="text" name="view.send.printCount" value="" id="view_send_printCount"
+                                   class=" txt" title="������Ϊ��"/>
+                        </td>
+                        <td class="title">ӡ������</td>
+                        <td>
+                            <script type="text/javascript"
+                                    src="/spgoa/resource/component/datePicker/WdatePicker.js"></script>
+                            <input type="text" class="test Wdate " name="view.send.printDate" id="view_send_printDate"
+                                   value="" title="ӡ�����ڲ���Ϊ��"
+                                   onclick="WdatePicker({'dateFmt':'yyyy-MM-dd',readOnly:true})"/></td>
+                    </tr>
+
+                    <tr>
+                        <td class="title">�����</td>
+                        <td colspan="3"><input type="text" name="view.send.keyword" value="" id="view_send_keyword"
+                                               class=" txt" title="����ʲ���Ϊ��"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="title">��ע</td>
+                        <td colspan="3">
+                            <textarea name="view.send.remark" cols="" rows="" id="view_send_remark"
+                                      class="txtarea"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td class="title">����</td>
+                        <td colspan="3">
+                            <script language="javascript" src="/spgoa/resource/common/js/attachment.js"></script>
+
+                            <div id="uploadDiv">
+                                <div><a class="addInput" href="javascript:void(0);">��Ӹ���</a></div>
+                                <div>
+                                    <input type="file" name="upload"/> <span><a class="delInput"
+                                                                                href="javascript:void(0);">ɾ��</a><span>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                </table>
+
+                <input type="hidden" name="view.send.id" value="" id="view_send_id"/>
+
+            </div>
+            <div class="tabcontainer">
+
+            </div>
+            <div class="tabcontainer"></div>
+            <div class="tabcontainer"></div>
+            <div class="tabcontainer"></div>
+        </div>
+
+    </div>
+    <div style='display:none;'>
+        <input type="radio" checked name="workflowView.process.transitionId" value="20120616151715318"/> ת���
+    </div>
+</form>
+
+
+</body>
+</html>

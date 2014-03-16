@@ -1,0 +1,437 @@
+body {
+    background: #4A71C6 url("images/bg/theme_bg_11.jpg") fixed no-repeat center center;
+}
+
+.win {
+    position: absolute;
+    width: 400px;
+    text-align: left;
+}
+
+.win .wintitle {
+    font-size: 14px;
+    font-weight: bold;
+    padding-top: 5px;
+    margin: 0px 13px;
+    height: 28px;
+    line-height: 28px;
+    text-indent: 15px;
+    cursor: move;
+    background: url("images/w_tab.png") repeat-x 0px 0px;
+}
+
+.win .wincontent {
+    position: relative;
+    margin: 0px 13px;
+    height: 300px;
+    background: #fff;
+    overflow: hidden;
+}
+
+.win .wincontent iframe {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 300px;
+    width: 374px;
+    border: 0;
+}
+
+.win .wincontent .iframecover {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 300px;
+    width: 374px;
+    background: #eee url(images/loading.gif) no-repeat center center;
+}
+
+.win .winbottom {
+    margin: 0px 13px;
+    height: 13px;
+    background: url("images/w_tab.png") repeat-x 0px -33px;
+}
+
+.win span {
+    position: absolute;
+    display: block;
+    background-image: url("images/window.png");
+}
+
+.win span.lt {
+    left: 0;
+    top: 0;
+    width: 13px;
+    height: 33px;
+    background-position: -115px -3px;
+}
+
+.win span.rt {
+    right: 0;
+    top: 0;
+    width: 13px;
+    height: 33px;
+    background-position: -137px -3px;
+}
+
+.win span.lb {
+    left: 0;
+    bottom: 0;
+    width: 13px;
+    height: 13px;
+    background-position: -155px -23px;
+}
+
+.win span.rb {
+    right: 0;
+    bottom: 0;
+    width: 13px;
+    height: 13px;
+    background-position: -175px -23px;
+}
+
+.win span.lc {
+    left: 0;
+    top: 33px;
+    width: 13px;
+    height: 300px;
+    background-position: -0px 0px;
+}
+
+.win span.rc {
+    right: 0;
+    top: 33px;
+    width: 13px;
+    height: 300px;
+    background-position: -15px 0px;
+}
+
+.win span.min {
+    right: 55px;
+    top: 12px;
+    width: 20px;
+    height: 18px;
+    background-position: -30px -0px;
+}
+
+.win span.min.focus {
+    background-position: -30px -19px;
+}
+
+.win span.max {
+    right: 35px;
+    top: 12px;
+    width: 20px;
+    height: 18px;
+    background-position: -50px -0px;
+}
+
+.win span.max.focus {
+    background-position: -50px -19px;
+}
+
+.win span.close {
+    right: 15px;
+    top: 12px;
+    width: 20px;
+    height: 18px;
+    background-position: -70px -0px;
+}
+
+.win span.close.focus {
+    background-position: -70px -19px;
+}
+
+.win span.restore {
+    right: 35px;
+    top: 12px;
+    width: 20px;
+    height: 18px;
+    background-position: -90px -0px;
+    display: none;
+}
+
+.win span.restore.focus {
+    background-position: -90px -19px;
+}
+
+.newwin {
+    position: absolute;
+    width: 400px;
+    text-align: left;
+    border: 1px solid #808080;
+}
+
+.newwin .wintitle {
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    height: 28px;
+    line-height: 28px;
+    text-indent: 15px;
+    cursor: move;
+    background: url("images/window/newwindow.png") repeat-x 0px -96px;
+}
+
+.newwin .wintitle span {
+    position: absolute;
+    display: block;
+    background-image: url("images/window/newwindow.png");
+}
+
+.newwin .wintitle span.min {
+    right: 70px;
+    top: 6px;
+    width: 25px;
+    height: 15px;
+    background-position: -0px -0px;
+}
+
+.newwin .wintitle span.min.focus {
+    background-position: -0px -17px;
+}
+
+.newwin .wintitle span.max {
+    right: 40px;
+    top: 6px;
+    width: 25px;
+    height: 15px;
+    background-position: -29px -0px;
+}
+
+.newwin .wintitle span.max.focus {
+    background-position: -29px -17px;
+}
+
+.newwin .wintitle span.close {
+    right: 10px;
+    top: 6px;
+    width: 25px;
+    height: 15px;
+    background-position: -58px -0px;
+}
+
+.newwin .wintitle span.close.focus {
+    background-position: -58px -17px;
+}
+
+.newwin .wintitle span.restore {
+    right: 40px;
+    top: 6px;
+    width: 25px;
+    height: 15px;
+    background-position: -87px -17px;
+    display: none;
+}
+
+.newwin .wintitle span.restore.focus {
+    background-position: -87px -17px;
+}
+
+.newwin .winfunc {
+    position: relative;
+    height: 36px;
+    line-height: 36px;
+    background-color: #D4D4D4;
+}
+
+.newwin .winfunc a {
+    position: absolute;
+    top: 6px;
+    width: 63px;
+    height: 22px;
+    background-image: url("images/window/newwindow.png");
+}
+
+.newwin .winfunc .home {
+    left: 20px;
+    background-position: -18px -42px;
+}
+
+.newwin .winfunc .home:hover {
+    background-position: -18px -66px;
+}
+
+.newwin .winfunc .back {
+    left: 100px;
+    background-position: -85px -42px;
+}
+
+.newwin .winfunc .back:hover {
+    background-position: -85px -66px;
+}
+
+.newwin .winfunc .prev {
+    left: 180px;
+    background-position: -152px -42px;
+}
+
+.newwin .winfunc .prev:hover {
+    background-position: -152px -66px;
+}
+
+.newwin .winfunc .refresh {
+    left: 260px;
+    background-position: -219px -42px;
+}
+
+.newwin .winfunc .refresh:hover {
+    background-position: -219px -66px;
+}
+
+.newwin .wincontent {
+    position: relative;
+    height: 300px;
+    background: #fff;
+    overflow: hidden;
+}
+
+.newwin .wincontent iframe {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 300px;
+    width: 374px;
+    border: 0;
+}
+
+.newwin .wincontent .iframecover {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 300px;
+    width: 374px;
+    background: #eee url(images/loading.gif) no-repeat center center;
+}
+
+.newwin .winbottom {
+    height: 10px;
+    background: url("images/window/newwindow.png") repeat-x 0px -258px;
+}
+
+.newwin .resizehandle {
+    position: absolute;
+    right: 2px;
+    bottom: 0px;
+    width: 10px;
+    height: 10px;
+    background: url("images/window/newwindow.png") no-repeat 3px -243px;
+}
+
+.theme_1 {
+    background: url("images/green.jpg") fixed right bottom;
+}
+
+.theme_2 {
+    background: url("images/bg.jpg") fixed right bottom;
+}
+
+.themes {
+    position: absolute;
+    z-index: 10;
+    width: 200px;
+    padding: 10px;
+    border: 1px solid #286AB4;
+    background: #CADFF7;
+}
+
+.themes .themes_1 {
+    border: 1px solid #96BEEB;
+    height: 100px;
+    margin-bottom: 10px;
+    background: url("images/theme_green.jpg") repeat-x;
+}
+
+.themes .themes_2 {
+    border: 1px solid #96BEEB;
+    height: 100px;
+    background: url("images/theme_bg.jpg") repeat-x;
+}
+
+/*
+ * jQuery UI Resizable 1.8.16
+ *
+ * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Resizable#theming
+ */
+.ui-resizable {
+    position: relative;
+}
+
+.ui-resizable-handle {
+    position: absolute;
+    font-size: 0.1px;
+    z-index: 99999;
+    display: block;
+}
+
+.ui-resizable-disabled .ui-resizable-handle, .ui-resizable-autohide .ui-resizable-handle {
+    display: none;
+}
+
+.ui-resizable-n {
+    cursor: n-resize;
+    height: 7px;
+    width: 100%;
+    top: -5px;
+    left: 0;
+}
+
+.ui-resizable-s {
+    cursor: s-resize;
+    height: 7px;
+    width: 100%;
+    bottom: -5px;
+    left: 0;
+}
+
+.ui-resizable-e {
+    cursor: e-resize;
+    width: 7px;
+    right: -5px;
+    top: 0;
+    height: 100%;
+}
+
+.ui-resizable-w {
+    cursor: w-resize;
+    width: 7px;
+    left: -5px;
+    top: 0;
+    height: 100%;
+}
+
+.ui-resizable-se {
+    cursor: se-resize;
+    width: 12px;
+    height: 12px;
+    right: 1px;
+    bottom: 1px;
+}
+
+.ui-resizable-sw {
+    cursor: sw-resize;
+    width: 9px;
+    height: 9px;
+    left: -5px;
+    bottom: -5px;
+}
+
+.ui-resizable-nw {
+    cursor: nw-resize;
+    width: 9px;
+    height: 9px;
+    left: -5px;
+    top: -5px;
+}
+
+.ui-resizable-ne {
+    cursor: ne-resize;
+    width: 9px;
+    height: 9px;
+    right: -5px;
+    top: -5px;
+}

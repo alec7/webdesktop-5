@@ -1,0 +1,380 @@
+/* htmlԪ����ʽ */
+body {
+    padding: 0;
+    margin: 0;
+    font: 13px 'Lucida Grande', 'Lucida Sans Unicode', Arial, Verdana, sans-serif;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+button {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    height: 25px;
+    line-height: 25px;
+    background: url("images/list/button.gif") no-repeat left top;
+}
+
+button div {
+    margin-left: 2px;
+    padding: 0px 10px;
+    background: url("images/list/button.gif") no-repeat right top;
+}
+
+button.highlight {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    height: 25px;
+    line-height: 25px;
+    background: url("images/list/button.gif") no-repeat left -35px;
+}
+
+button.highlight div {
+    margin-left: 2px;
+    padding: 0px 10px;
+    background: url("images/list/button.gif") no-repeat right -35px;
+}
+
+/* htmlԪ����ʽ���� */
+
+/* ȫ����ʽ */
+.center {
+    text-align: center;
+}
+
+.left {
+    text-align: left;
+}
+
+.right {
+    text-align: right;
+}
+
+.rowspan {
+    height: 5px;
+    line-height: 5px;
+    width: 100%;
+    clear: both;
+}
+
+.txt {
+    border: 1px solid #999;
+    width: 180px;
+    height: 20px;
+}
+
+.longtxt {
+    border: 1px solid #999;
+    width: 400px;
+    height: 20px;
+}
+
+.width50 {
+    width: 50px;
+}
+
+.width80 {
+    width: 80px;
+}
+
+.width100 {
+    width: 100px;
+}
+
+.width120 {
+    width: 120px;
+}
+
+.width150 {
+    width: 150px;
+}
+
+.width200 {
+    width: 200px;
+}
+
+.width250 {
+    width: 250px;
+}
+
+.width300 {
+    width: 300px;
+}
+
+/* ȫ����ʽ���� */
+
+/* ҳ�沼����ʽ */
+#pageheader {
+    margin: 5px;
+}
+
+#pageheader #modules {
+    font-size: 14px;
+    height: 31px;
+    padding-top: 5px;
+    padding-left: 20px;
+    background-color: #2E66A5;
+}
+
+#pageheader #modules li {
+    float: left;
+    height: 31px;
+    line-height: 31px;
+    margin-left: 10px;
+    padding-left: 10px;
+    background-image: url("images/list/list.png");
+    background-position: left top;
+}
+
+#pageheader #modules li div {
+    margin-left: 5px;
+    padding-right: 15px;
+    color: #eee;
+    background-image: url("images/list/list.png");
+    background-position: right top;
+}
+
+#pageheader #modules li.focus {
+    background-position: left -31px;
+}
+
+#pageheader #modules li.focus div {
+    color: green;
+    font-weight: bold;
+    background-position: right -31px;
+}
+
+#pagebody {
+    padding: 8px;
+}
+
+#work {
+    position: relative;
+    padding: 5px;
+    background-color: #CADEF0;
+}
+
+#work .lt {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 6px;
+    height: 30px;
+    background: url("images/list/list.png") no-repeat left -65px;
+}
+
+#work .rt {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 6px;
+    height: 30px;
+    background: url("images/list/list.png") no-repeat -6px -65px;
+}
+
+#work .lb {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 4px;
+    height: 10px;
+    background: url("images/list/list.png") no-repeat left -95px;
+}
+
+#work .rb {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    width: 4px;
+    height: 10px;
+    background: url("images/list/list.png") no-repeat -6px -97px;
+}
+
+#work .worktitle {
+    position: relative;
+    height: 28px;
+    line-height: 24px;
+}
+
+#work .worktitle .nav {
+    text-indent: 10px;
+}
+
+#work .worktitle .funcs {
+    position: absolute;
+    right: 10px;
+    top: 0px;
+}
+
+#work .worktitle .funcs span {
+    cursor: pointer;
+    background: url("images/list/add.gif") no-repeat 0px -2px;
+    padding-left: 18px;
+}
+
+#work .workdescription {
+    padding: 5px 0px;
+}
+
+#work .workfind {
+    padding: 5px;
+    text-align: right;
+}
+
+#work .workfind .workfindmore {
+    display: none;
+    padding: 3px 0px;
+}
+
+#work .workcontainer {
+    background: #fff;
+    padding: 10px;
+}
+
+/* ҳ�沼����ʽ���� */
+
+/* �б���ʽ */
+.table {
+    table-layout: fixed;
+    width: 100%;
+}
+
+.table tbody td {
+    border-bottom: 1px solid #eee;
+}
+
+.table thead tr {
+    background: #e1ebf5;
+}
+
+.table thead th {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.table td, .table th {
+    padding: 5px;
+    color: #5F5C5C;
+}
+
+.table td a {
+    color: #5F5C5C;
+    text-decoration: none;
+}
+
+.table td a:hover {
+    text-decoration: underline;
+}
+
+.table tfoot td {
+    text-align: right;
+    padding: 10px 0px 2px 5px;
+}
+
+.table .edit {
+    padding-left: 20px;
+    background: url("images/edit.gif") no-repeat 0px 0px;
+}
+
+.table .delete {
+    padding-left: 20px;
+    background: url("images/delete.gif") no-repeat 0px 0px;
+}
+
+/* �б���ʽ���� */
+
+/* ��ҳ��ʽ */
+.page {
+}
+
+.page span {
+    font-size: 16px;
+    padding: 0px 5px;
+    border: 1px solid #ccc;
+    margin-right: 4px;
+}
+
+.page span.focus {
+    color: red;
+    border: 0;
+    font-weight: bold;
+}
+
+/* ��ҳ��ʽ���� */
+
+/* �༭������ʽ */
+.workedit {
+    padding: 10px;
+}
+
+.workedit i {
+    color: red;
+    padding: 0px 5px;
+}
+
+.workedit ul {
+}
+
+.workedit ul li {
+    padding: 3px 25px;
+    color: #666;
+}
+
+.workedit ul li.title {
+    font-weight: bold;
+    color: #C60000;
+    border-bottom: 1px solid #eee;
+    margin: 8px 0px;
+}
+
+.workedit ul li label {
+    padding-bottom: 3px;
+    width: 120px;
+    height: 20px;
+    line-height: 20px;
+    text-align: right;
+    display: -moz-inline-box;
+    display: inline-block;
+}
+
+.workedit ul li label.checkbox_label {
+    width: auto;
+    padding: 0px 5px 0px 2px;
+}
+
+.workedit ul li label.radio_label {
+    width: auto;
+    padding: 0px 5px 0px 2px;
+}
+
+.workedit ul li label.exception {
+    width: auto;
+}
+
+.workedit .submit {
+    padding: 20px 145px;
+}
+
+.workedit ul li .confirm {
+    color: #999;
+    padding: 5px 10px;
+    display: -moz-inline-box;
+    display: inline-block;
+}
+
+.workedit ul li .confirmerror {
+    color: red;
+    padding: 5px 10px 5px 20px;
+    background: url("images/list/error.gif") no-repeat 0px 3px;
+    display: -moz-inline-box;
+    display: inline-block;
+}
+
+/* �༭������ʽ���� */
+
