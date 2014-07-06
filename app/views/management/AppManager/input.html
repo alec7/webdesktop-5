@@ -10,13 +10,11 @@
 </style>
 <div class="worktitle">
     <div class="nav">
-        <span>修改应用</span>
+        <span>创建应用</span>
     </div>
 </div>
 <div class="workinfo">
-#{form @management.AppManager.edit(), method:'POST', id:'f1'}
-    <input type="hidden" name="app.id" value="${app.id}"/>
-    <input type="hidden" name="ids" id="ids"/>
+#{form @management.AppManager.create(), method:'POST', id:'f1'}
     <fieldset>
         <table>
             <colgroup>
@@ -26,20 +24,19 @@
             <tr>
                 <td class="right title"><i> *</i>名称:</td>
                 <td>
-                    <input name="app.name" value="${app.name?:'无'}"/>
+                    <input name="app.name"/>
                 </td>
             </tr>
             <tr>
-                <td class="right title">排序:</td>
+                <td class="right title">排序编号:</td>
                 <td>
-                    <input name="app.orderNo" value="${app.orderNo?:'无'}"/>
+                    <input name="app.orderNo"/>
                 </td>
             </tr>
             <tr>
                 <td class="right title">备注:</td>
                 <td>
                     <textarea name="app.remark" class="txtarea">
-					${app.remark?:'无'}
                     </textarea>
                 </td>
             </tr>
@@ -55,7 +52,7 @@
                 <td>
                     <div class="selectDiv">
                         <select style="height: 200px" id="selectModules" multiple="multiple" class="txt">
-							#{list items:otherModule, as:'m'}
+							#{list items:_allModule, as:'m'}
                                 <option value="${m.id}">${m.name}</option>
 							#{/list}
                         </select>
@@ -71,9 +68,7 @@
                     <div class="selectDiv">
                         <select style="height: 200px" id="confirmModules" multiple="multiple" name="moduleIds"
                                 class="txt">
-							#{list items:app.modules, as:'m'}
-                                <option value="${m.id}">${m.name}</option>
-							#{/list}
+
                         </select>
                     </div>
                 </td>

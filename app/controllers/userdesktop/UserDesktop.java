@@ -4,7 +4,6 @@ import com.google.gson.Gson;
 import models.ModuleBean;
 import models.UserdesktopBean;
 import play.Logger;
-import play.Play;
 import play.cache.Cache;
 import play.mvc.Controller;
 import utils.cache.DesktopCache;
@@ -20,10 +19,7 @@ import utils.exception.DesktopException;
 public class UserDesktop extends Controller {
 	public static void index() {
 		UserdesktopBean userdesktop = getUserdesktop(getUser());
-
-		String ctx = Play.ctxPath;
-
-		render(userdesktop, ctx);
+		render(userdesktop);
 	}
 
 	public static void addModule() {

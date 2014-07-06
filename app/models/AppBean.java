@@ -18,10 +18,10 @@ public class AppBean extends GenericModel {
 	public String id;
 	@Required
 	public String name;
+	@Required
+	public int orderNo;
 	@MaxSize(value = 500)
 	public String remark;
-	@Required
-	public int orderNo = Integer.MAX_VALUE;
 	@Transient
 	public List<ModuleBean> modules = new ArrayList<ModuleBean>();
 	//0：不显示，1：显示；默认显示

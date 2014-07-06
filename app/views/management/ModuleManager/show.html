@@ -1,0 +1,207 @@
+#{extends 'template/template_view.html' /}
+<div class="worktitle">
+    <div class="nav">
+        <span>修改</span>
+    </div>
+</div>
+<div class="workinfo">
+#{form @management.ModuleManager.edit(), method:'POST', id:'f1', enctype :'multipart/form-data'}
+    <fieldset>
+        <table>
+            <tr>
+                <td class="right title"><label class="title" for="name"><i> *</i>名称：</label></td>
+                <td>
+                    <input type="hidden" name="module.id" value="${module.id}">
+                    <input type="text" name="module.name" value="${module.name}" title="请输入名称" cssClass="required txt"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="right title"><label class="title" for="code"><i> *</i>编码：</label></td>
+                <td>
+                    <input type="text" name="module.code" value="${module.code}" title="请输入编码" cssClass="required txt"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="right title"><label class="title" for="icon"><i> *</i>图标：</label></td>
+                <td>
+                    <img src="@{'/public/desktop/css/base/images/icon'}/${module.icon}"/>
+                    <br/>
+                    <input type="file" name="icon">
+                </td>
+            </tr>
+            <tr>
+                <td class="right title"><label class="title" for="url"><i> *</i>url：</label></td>
+                <td>
+                    <input type="text" name="module.url" value="${module.url}" title="请输入url" cssStyle="width: 300px;"
+                           cssClass="required txt"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="right title"><label class="title" for="width"><i> *</i>默认宽度：</label></td>
+                <td>
+                    <input type="text" name="module.width" value="${module.width?:800}" title="请输入默认宽度"
+                           cssClass="required txt"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="right title"><label class="title" for="height"><i> *</i>默认高度：</label></td>
+                <td>
+                    <input type="text" name="module.height" value="${module.height?:600}" title="请输入默认高度"
+                           cssClass="required txt"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="right title"><label class="title" for="maxWidth">最大宽度：</label></td>
+                <td>
+                    <input type="text" name="module.maxWidth" value="${module.maxWidth?:1024}" cssClass="txt"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="right title"><label class="title" for="maxHeight">最大高度：</label></td>
+                <td>
+                    <input type="text" name="module.maxHeight" value="${module.maxHeight?:768}" cssClass="txt"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="right title"><label class="title" for="minWidth">最小宽度：</label></td>
+                <td>
+                    <input type="text" name="module.minWidth" value="${module.minWidth?:800}" cssClass="txt"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="right title"><label class="title" for="minHeight">最小高度：</label></td>
+                <td>
+                    <input type="text" name="module.minHeight" value="${module.minHeight?:600}" cssClass="txt"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="right title"><label class="title" for="draggable">是否允许拖动：</label></td>
+                <td>
+					#{if module.draggable == 1}
+                        <input type="radio" name="module.draggable" value="1" checked>是</input>
+                        <input type="radio" name="module.draggable" value="0">否</input>
+					#{/if}
+					#{else }
+                        <input type="radio" name="module.draggable" value="1">是</input>
+                        <input type="radio" name="module.draggable" value="0" checked>否</input>
+					#{/else}
+                </td>
+            </tr>
+            <tr>
+                <td class="right title"><label class="title" for="resizeable">是否允许调整大小：</label></td>
+                <td>
+					#{if module.resizeable == 1}
+                        <input type="radio" name="module.resizeable" value="1" checked>是
+                        <input type="radio" name="module.resizeable" value="0">否
+					#{/if}
+					#{else}
+                        <input type="radio" name="module.resizeable" value="1">是
+                        <input type="radio" name="module.resizeable" value="0" checked>否
+					#{/else}
+
+                </td>
+            </tr>
+            <tr>
+                <td class="right title"><label class="title" for="minimize">是否最小化：</label></td>
+                <td>
+					#{if module.minimize == 1}
+                        <input type="radio" name="module.minimize" value="1" checked>是
+                        <input type="radio" name="module.minimize" value="0">否
+					#{/if}
+					#{else}
+                        <input type="radio" name="module.minimize" value="1">是
+                        <input type="radio" name="module.minimize" value="0" checked>否
+					#{/else}
+                </td>
+            </tr>
+            <tr>
+                <td class="right title"><label class="title" for="maximize">是否最大化：</label></td>
+                <td>
+					#{if module.maximize == 1}
+                        <input type="radio" name="module.maximize" value="1" checked>是
+                        <input type="radio" name="module.maximize" value="0">否
+					#{/if}
+					#{else}
+                        <input type="radio" name="module.maximize" value="1">是
+                        <input type="radio" name="module.maximize" value="0" checked>否
+					#{/else}
+                </td>
+            </tr>
+            <tr>
+                <td class="right title"><label class="title" for="align">水平对齐方式：</label></td>
+                <td>
+                    <select name="module.align" class="moduleAlign">
+                        <option value="center">center</option>
+                        <option value="char">char</option>
+                        <option value="justify">justify</option>
+                        <option value="left">left</option>
+                        <option value="right">right</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="right title"><label class="title" for="valign">垂直对齐方式：</label></td>
+                <td>
+                    <select name="module.valign" class="moduleValign">
+                        <option value="baseline">baseline</option>
+                        <option value="bottom">bottom</option>
+                        <option value="middle">middle</option>
+                        <option value="top">top</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="right title"><label class="title" for="show">是否显示：</label></td>
+                <td>
+					#{if module.isShow == 1}
+                        <input type="radio" name="module.isShow" value="1" checked>是
+                        <input type="radio" name="module.isShow" value="0">否
+					#{/if}
+					#{else}
+                        <input type="radio" name="module.isShow" value="1">是
+                        <input type="radio" name="module.isShow" value="0" checked>否
+					#{/else}
+
+                </td>
+            </tr>
+            <tr>
+                <td class="right title"><label class="title" for="remark">备注：</label></td>
+                <td>
+                    <textarea name="module.remark" class="txtarea">
+					${module.remark?:''}
+                    </textarea>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" aling="right">
+                    <button id="submit" type="submit" class="highlight">
+                        <div>&nbsp;保&nbsp;&nbsp;存&nbsp;</div>
+                    </button>
+                    <button type="button" onclick="javascript:history.back(-1);">
+                        <div>&nbsp;返&nbsp;&nbsp;回&nbsp;</div>
+                    </button>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+#{/form}
+</div>
+<script>
+    $(document).ready(function () {
+        var align = '${module.align}';
+        var valign = '${module.valign}';
+        $(".moduleAlign option").each(function () {
+            var v = $(this).text();
+            if (align == v) {
+                $(this).attr("selected", true);
+            }
+        })
+        $(".moduleValign option").each(function () {
+            var v = $(this).text();
+            if (valign == v) {
+                $(this).attr("selected", true);
+            }
+        })
+
+    });
+</script>

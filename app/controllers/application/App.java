@@ -3,7 +3,6 @@ package controllers.application;
 import java.util.List;
 
 import models.AppBean;
-import play.Play;
 import play.mvc.Controller;
 import utils.cache.DesktopCache;
 
@@ -15,9 +14,11 @@ import utils.cache.DesktopCache;
  */
 
 public class App extends Controller {
+	/**
+	 * 从缓存中查询所有app
+	 */
 	public static void Query() {
 		List<AppBean> apps = DesktopCache.getAllApps();
-		String ctx = Play.ctxPath;
-		render(apps, ctx);
+		render(apps);
 	}
 }

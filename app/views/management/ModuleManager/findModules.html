@@ -1,1 +1,61 @@
-modules
+#{extends 'template/template_view.html'/}
+<form action="find_modules.shtml" method="post">
+    <table class="tablegrid">
+        <caption class="worktitle">
+            <div class="nav">
+					<span>
+							模块管理
+					</span>
+            </div>
+            <div class="funcs">
+                <button type="button" class="func" onclick="javascript:window.location.href='module/input'">
+                    <div>创建</div>
+                </button>
+            </div>
+        </caption>
+        <colgroup>
+            <col class="width80"></col>
+            <col class="width80"></col>
+            <col></col>
+            <col class="width80"></col>
+            <col class="width80"></col>
+            <col class="width80"></col>
+            <col class="width80"></col>
+        </colgroup>
+        <thead>
+        <tr>
+            <th>名称</th>
+            <th>编码</th>
+            <th>URL</th>
+            <th>宽</th>
+            <th>高</th>
+            <th>是否显示</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+		#{list items:modules, as:'m'}
+        <tr>
+            <td class="center">${m.name}</td>
+            <td>${m.code}</td>
+            <td>${m.url}</td>
+            <td>${m.width}</td>
+            <td>${m.height}</td>
+            <td>
+				#{if m.isShow == 1}
+                    显示
+				#{/if}
+				#{else }
+                    不显示
+				#{/else}
+            </td>
+            <td>
+                <ul class="opts">
+                    <li class="edit"><a href="@{show(m.id)}">修改</a></li>
+                </ul>
+            </td>
+        </tr>
+		#{/list}
+        </tbody>
+    </table>
+</form>

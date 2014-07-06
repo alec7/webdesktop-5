@@ -9,7 +9,7 @@
     <script src="@{'/public/common/js/jquery-1.6.1.min.js'}"></script>
     <script src="@{'/public/desktop/js/addModule.js'}"></script>
     <script type="text/javascript">
-        var ctx = "${ctx}";
+        var ctx = "${play.ctxPath}";
     </script>
 </head>
 
@@ -74,6 +74,7 @@
                             <div class="add" onclick="javascript:addModule('${m.id}')"></div>
                         </li>
                         <li class="description">${m.remark?:''}</li>
+
                     </ul>
 				#{/if}
 

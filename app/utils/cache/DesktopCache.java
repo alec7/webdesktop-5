@@ -76,12 +76,17 @@ public class DesktopCache {
 	}
 
 	public static UserdesktopBean getUserdesktop(String userId) {
-		List<UserdesktopBean> userdesktops = (List<UserdesktopBean>) Cache.get("uds");
-		if (null != userdesktops) {
-			for (UserdesktopBean userdesktop : userdesktops) {
-				if (userId.equals(userdesktop.userId)) {
-					return userdesktop;
-				}
+		Object obj = Cache.get("uds");
+		List<UserdesktopBean> userdesktops = null;
+		if (obj == null) {
+			initUserdesktops();
+			userdesktops = (List<UserdesktopBean>) Cache.get("uds");
+		} else {
+			userdesktops = (List<UserdesktopBean>) obj;
+		}
+		for (UserdesktopBean userdesktop : userdesktops) {
+			if (userId.equals(userdesktop.userId)) {
+				return userdesktop;
 			}
 		}
 		return null;
@@ -109,7 +114,8 @@ public class DesktopCache {
 	}
 
 	public static AppBean getApp(String appId) {
-		List<AppBean> apps = (List<AppBean>) Cache.get("apps");
+		List<AppBean> apps = getAllApps();
+
 		for (AppBean app : apps) {
 			if (appId.equals(app.id)) {
 				return app;
@@ -119,15 +125,31 @@ public class DesktopCache {
 	}
 
 	public static List<AppBean> getAllApps() {
-		return (List<AppBean>) Cache.get("apps");
+		List<AppBean> apps = null;
+		Object obj = Cache.get("apps");
+		if (null == obj) {
+			initApps();
+			apps = (List<AppBean>) Cache.get("apps");
+		} else {
+			apps = (List<AppBean>) obj;
+		}
+		return apps;
 	}
 
 	public static List<ModuleBean> getAllModules() {
-		return (List<ModuleBean>) Cache.get("modules");
+		List<ModuleBean> modules = null;
+		Object obj = Cache.get("modules");
+		if (obj == null) {
+			initModules();
+			modules = (List<ModuleBean>) Cache.get("modules");
+		} else {
+			modules = (List<ModuleBean>) obj;
+		}
+		return modules;
 	}
 
 	public static ModuleBean getModule(String moduleId) {
-		List<ModuleBean> modules = (List<ModuleBean>) Cache.get("modules");
+		List<ModuleBean> modules = getAllModules();
 		for (ModuleBean module : modules) {
 			if (moduleId.equals(module.id)) {
 				return module;

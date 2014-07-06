@@ -1,6 +1,5 @@
 package controllers.management;
 
-import play.Play;
 import play.mvc.Controller;
 
 /**
@@ -12,7 +11,7 @@ import play.mvc.Controller;
 
 public class Index extends Controller {
 	public static void index() {
-		String ctx = Play.ctxPath;
-		render(ctx);
+		// do nothing, just for render
+		render();
 	}
 }
