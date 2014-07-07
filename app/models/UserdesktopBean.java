@@ -151,7 +151,7 @@ public class UserdesktopBean extends GenericModel {
 
 	public String getDesktopJsonView() {
 		DesktopJson desktopJson = convertJsonToObj(desktopJsonData);
-		desktopJsonDataView = toJsonString(desktopJson);
+		desktopJsonDataView = toJsonString(desktopJson).replace("\\", "");
 		return desktopJsonDataView;
 	}
 
