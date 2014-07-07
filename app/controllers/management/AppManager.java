@@ -55,9 +55,8 @@ public class AppManager extends Controller {
 
 	public static void edit(AppBean app, String ids) {
 
-		app.merge();
+		app.save();
 
-		DesktopCache.initApps();
 		//先删除appModule，在根据ids重建appModule
 		AppModuleBean.delete("appId = ?", app.id);
 		if (StringUtils.isNotBlank(ids)) {
@@ -70,6 +69,8 @@ public class AppManager extends Controller {
 				am.save();
 			}
 		}
+		//重建app缓存依赖于appmoudle关系，所以先要强刷进数据库
+		AppModuleBean.em().flush();
 
 		//重建appmoudle关系，再刷一次缓存
 		DesktopCache.initApps();
@@ -85,9 +86,6 @@ public class AppManager extends Controller {
 
 		app.save();
 
-		//刷一次缓存
-		DesktopCache.initApps();
-
 		//保存appmodule
 		if (StringUtils.isNotBlank(ids)) {
 			String[] id = ids.split(",");
@@ -99,6 +97,8 @@ public class AppManager extends Controller {
 				am.save();
 			}
 		}
+		//重建app缓存依赖于appmoudle关系，所以先要强刷进数据库
+		AppModuleBean.em().flush();
 
 		//重建appmoudle关系，再刷一次缓存
 		DesktopCache.initApps();
