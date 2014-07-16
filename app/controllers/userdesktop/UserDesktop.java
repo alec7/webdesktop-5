@@ -56,6 +56,24 @@ public class UserDesktop extends Controller {
 		userdesktop.merge();
 	}
 
+	public static void setTheme(String themeId) {
+		if (null == themeId) {
+			themeId = "2";
+		}
+		if (themeId.trim().equals("")) {
+			themeId = "1";
+		}
+		/**更新操作**/
+		UserdesktopBean.delete("userId = ?", getUser());
+		UserdesktopBean userdesktop = new UserdesktopBean();
+		userdesktop.themeId = themeId;
+		userdesktop.userId = getUser();
+		userdesktop.desktopJsonData = DesktopCache.getUserdesktop(getUser()).desktopJsonData;
+		userdesktop.save();
+
+		DesktopCache.initUserdesktops();
+	}
+
 	/**
 	 * 获取用户桌面数据
 	 *
@@ -63,11 +81,7 @@ public class UserDesktop extends Controller {
 	 * @return
 	 */
 	private static final UserdesktopBean getUserdesktop(String userId) {
-		UserdesktopBean userdesktop = DesktopCache.getUserdesktop(userId);
-		if (userdesktop == null) {
-			userdesktop = new UserdesktopBean();
-		}
-		return userdesktop;
+		return DesktopCache.getUserdesktop(userId);
 	}
 
 	private static final String getUser() {

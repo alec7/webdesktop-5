@@ -630,7 +630,6 @@ i {
     color: #1a396f;
     background: #ebf7ff url("images/progress/spg-loading.gif") no-repeat center 35px;
 }
-
 /*************************************************************/
 
 /***************************popup弹出窗口**************************/
@@ -678,7 +677,6 @@ i {
     line-height: 28px;
     text-align: left;
 }
-
 .navigator a {
     font-size: 14px;
     font-family: verdana;
@@ -692,7 +690,6 @@ i {
     font-size: 14px;
     background: #ccc;
 }
-
 .nav-title {
     font-weight: 700;
     font-size: 14px;

@@ -15,16 +15,15 @@ GET     /attachments/                           staticDir:attachments
 #query all apps and modules
 GET /application/apps  application.App.query
 
-#addModule
+#用户桌面
 POST /userdesktop/addmodule    userdesktop.UserDesktop.addModule
 POST /userdesktop/uninstallmodule    userdesktop.UserDesktop.uninstallModule
+POST /userdesktop/setTheme   userdesktop.UserDesktop.setTheme
 
 #桌面管理-------------------------------------------
-
 GET /management/index    management.Index.index
 GET /management/findapps    management.AppManager.findApps
 GET /management/findmodules    management.ModuleManager.findModules
-GET /management/findicons    management.IconManager.findIcons
 
 #应用管理
 GET /management/app/show/{id}   management.AppManager.show
@@ -33,7 +32,10 @@ GET /management/app/input   management.AppManager.input
 POST /management/app/create   management.AppManager.create
 
 #模块管理
-GET /management/module/show/{id} management.ModuleManager.show
-GET /management/module/input management.ModuleManager.input
-POST /management/module/create management.ModuleManager.create
-POST /management/module/edit management.ModuleManager.edit
+GET /management/module/show/{id}    management.ModuleManager.show
+GET /management/module/input    management.ModuleManager.input
+POST /management/module/create  management.ModuleManager.create
+POST /management/module/edit    management.ModuleManager.edit
+
+#主题管理
+GET /management/theme/findthemes    management.ThemeManager.findThemes

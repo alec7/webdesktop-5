@@ -10,4 +10,9 @@ import play.mvc.Controller;
  */
 
 public class ThemeManager extends Controller {
+
+	public static void findThemes() {
+		//do nothing, just for render
+		render();
+	}
 }

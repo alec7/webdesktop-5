@@ -107,6 +107,9 @@ button.highlight div {
     width: 300px;
 }
 
+/* ȫ����ʽ���� */
+
+/* ҳ�沼����ʽ */
 #pageheader {
     margin: 5px;
 }
@@ -234,6 +237,9 @@ button.highlight div {
     padding: 10px;
 }
 
+/* ҳ�沼����ʽ���� */
+
+/* �б���ʽ */
 .table {
     table-layout: fixed;
     width: 100%;
@@ -281,6 +287,9 @@ button.highlight div {
     background: url("images/delete.gif") no-repeat 0px 0px;
 }
 
+/* �б���ʽ���� */
+
+/* ��ҳ��ʽ */
 .page {
 }
 
@@ -297,6 +306,9 @@ button.highlight div {
     font-weight: bold;
 }
 
+/* ��ҳ��ʽ���� */
+
+/* �༭������ʽ */
 .workedit {
     padding: 10px;
 }
@@ -364,4 +376,5 @@ button.highlight div {
     display: inline-block;
 }
 
+/* �༭������ʽ���� */
 

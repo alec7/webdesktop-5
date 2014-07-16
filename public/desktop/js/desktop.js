@@ -531,7 +531,6 @@ Module.prototype = {
                 if (module.id != "-1") {
                     win.max();
                 }
-                ;
             };
             var newOpenHandle = function () {
                 var moduleData = getModuleData(module.id);
@@ -555,11 +554,10 @@ Module.prototype = {
             e.stopPropagation();
             var moduleData = getModuleData(module.id);
             Body.getCurrentPage().openWin(moduleData);
-//			var win = Body.getCurrentPage().openWin(moduleData);
-//			if ( module.id!="-1" )
-//			{
-//					win.max();
-//			};
+            var win = Body.getCurrentPage().openWin(moduleData);
+//			if ( module.id!="-1" ) {
+//                win.max();
+//			}
         })
     }
 }
@@ -833,6 +831,8 @@ var Win = function (config) {
     this.height = 0;
     this.state = 'restore';
     this.prestate = 'restore';
+    this.padding = 36;
+    /*this.padding = 38+36;*/
 
     this.opts = {
         name: 'window',
@@ -876,8 +876,9 @@ Win.prototype = {
         var absoluteUrl = this.opts.url;
         if (absoluteUrl.indexOf("http://") < 0)
             absoluteUrl = ctx + "/" + absoluteUrl;
-        this.box = $("<div class='win' style='position:absolute;z-index:" + wincount++ + "' onselectstart='return false;'></div>");
-        this.box.append("<span class='lt'></span><span class='rt'></span><span class='lb'></span><span class='rb'></span><span class='lc'></span><span class='rc'></span><span class='resizehandle'></span>");
+        this.opts.url = absoluteUrl;
+        this.box = $("<div class='newwin' style='position:absolute;z-index:" + wincount++ + "' onselectstart='return false;'></div>");
+        this.box.append("<span class='resizehandle'></span>");
 
         var titlebar = $("<div class='wintitle'>" + this.opts.name + "</div>");
         titlebar.appendTo(this.box);
@@ -888,11 +889,35 @@ Win.prototype = {
                 min.css("right", "35px");
             /*位置右移*/
         }
+
         if (this.opts["maximize"] == true) {
             titlebar.append("<span class='restore'></span>");
             titlebar.append("<span class='max'></span>");
         }
         titlebar.append("<span class='close'></span>");
+
+        var funcbar = $("<div class='winfunc' style='display:none;'></div>");
+        var home = $("<a class='home'></a>");
+        var back = $("<a class='back'></a>");
+        var prev = $("<a class='prev'></a>");
+        var refresh = $("<a class='refresh'></a>");
+        home.click(function () {
+            //alert(this.opts.url);
+        });
+        back.click(function () {
+            //var ifr = $(this).parent().parent().find("iframe");
+            //if ( ifr.size()>0 ){
+            //	ifr[0].contentWindow.history.back();
+            //}
+        });
+        prev.click(function () {
+            //history.forward();
+        });
+        refresh.click(function () {
+            //window.location.href=this.opts.url;
+        });
+        funcbar.append(home).append(back).append(prev).append(refresh);
+        funcbar.appendTo(this.box);
 
         var wincontent = $("<div class='wincontent'></div>");
         var iframecover = $("<div class='iframecover'></div>");
@@ -927,7 +952,7 @@ Win.prototype = {
         if (this.opts.valign == "top")
             this.box.css({top: 0});
         else if (this.opts.valign == "bottom")
-            this.box.css({top: (totalHeight - height - 20) > 0 ? (totalHeight - height - 20) : 0});
+            this.box.css({top: (totalHeight - height) > 0 ? (totalHeight - height) : 0});
         else
             this.box.css({top: (totalHeight - height) / 2 > 0 ? (totalHeight - height) / 2 : 0});
 
@@ -935,7 +960,7 @@ Win.prototype = {
         this.box.height(height);
         this.box.width(width);
         this.box.find(".iframecover").width(width);
-        this.box.find(".wincontent,.lc,.rc,.iframecover").height(height - 40);
+        this.box.find(".wincontent,.iframecover").height(height - this.padding);
         //this.resizewin();
     },
     bindEvent: function () {
@@ -957,8 +982,8 @@ Win.prototype = {
 
                     var top = win.box.offset().top;
                     var left = win.box.offset().left;
-                    var height = getTotalHeight() - 40;
-                    var width = getTotalWidth() - 40;
+                    var height = getTotalHeight();
+                    var width = getTotalWidth();
                     if (top > height)
                         win.box.css({top: height});
                     if (top < 0)
@@ -1098,11 +1123,11 @@ Win.prototype = {
                 this.box.height(h);
             }
 
-        this.box.find(".wincontent,.lc,.rc,.iframecover").height(h - 46);
-        this.box.find(".iframecover").width(w - 26);
+        this.box.find(".wincontent,.iframecover").height(h - this.padding);
+        this.box.find(".iframecover").width(w);
     },
     resizeiframe: function () {
-        this.box.find("iframe").height(this.box.height() - 46).width(this.box.width() - 26);
+        this.box.find("iframe").height(this.box.height() - this.padding).width(this.box.width());
     },
     restore: function () {
         //还原
@@ -1123,9 +1148,9 @@ Win.prototype = {
     max: function () {
         //最大化
 
-        this.box.css({left: -8, top: -8, display: 'block'});
-        this.box.width(getTotalWidth() + 16);
-        this.box.height(getTotalHeight() + 16);
+        this.box.css({left: 0, top: 0, display: 'block'});
+        this.box.width(getTotalWidth());
+        this.box.height(getTotalHeight());
 
         this.resizewin();
         this.resizeiframe();

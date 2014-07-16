@@ -92,19 +92,20 @@ public class DesktopCache {
 		return null;
 	}
 
-	public static void addUserdesktop(UserdesktopBean ud) {
-		List<UserdesktopBean> userdesktops = (List<UserdesktopBean>) Cache.get("uds");
-		userdesktops.add(ud);
-		Cache.set("uds", userdesktops);
-	}
-
 	public static List<ThemeBean> getAllThemes() {
-		List<ThemeBean> themes = (List<ThemeBean>) Cache.get("themes");
+		Object obj = Cache.get("themes");
+		List<ThemeBean> themes;
+		if (obj == null) {
+			initThemes();
+			themes = (List<ThemeBean>) Cache.get("themes");
+		} else {
+			themes = (List<ThemeBean>) obj;
+		}
 		return themes;
 	}
 
 	public static ThemeBean getTheme(String themeId) {
-		List<ThemeBean> themes = (List<ThemeBean>) Cache.get("themes");
+		List<ThemeBean> themes = getAllThemes();
 		for (ThemeBean theme : themes) {
 			if (themeId.equals(theme.id)) {
 				return theme;
@@ -158,18 +159,4 @@ public class DesktopCache {
 		return null;
 	}
 
-	public static List<IconBean> getAllIcons() {
-		return (List<IconBean>) Cache.get("icons");
-	}
-
-	public static IconBean getIcon(String iconId) {
-		List<IconBean> icons = (List<IconBean>) Cache.get("icons");
-		for (IconBean icon : icons) {
-			if (iconId.equals(icon.id)) {
-				return icon;
-			}
-		}
-
-		return null;
-	}
 }
