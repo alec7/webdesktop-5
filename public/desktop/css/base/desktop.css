@@ -84,7 +84,7 @@ li {
     position: absolute;
     background-image: url("images/btn.png");
     background-position: 0px 27px;
-    no-repeat;
+    background-repeat: no-repeat;
     width: 100px;
     height: 30px;
     vertical-align: middle;
@@ -110,7 +110,7 @@ li {
 #pagetop .workDiv span {
     background-image: url("images/icon_s1.png");
     background-position: 5px 5px;
-    no-repeat;
+    background-repeat: no-repeat;
     width: 16px;
     height: 16px;
 }
