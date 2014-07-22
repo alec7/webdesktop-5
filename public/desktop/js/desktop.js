@@ -555,9 +555,9 @@ Module.prototype = {
             var moduleData = getModuleData(module.id);
             Body.getCurrentPage().openWin(moduleData);
             var win = Body.getCurrentPage().openWin(moduleData);
-//			if ( module.id!="-1" ) {
-//                win.max();
-//			}
+            if (module.id != "-1") {
+                win.max();
+            }
         })
     }
 }
@@ -961,6 +961,7 @@ Win.prototype = {
         this.box.width(width);
         this.box.find(".iframecover").width(width);
         this.box.find(".wincontent,.iframecover").height(height - this.padding);
+
         //this.resizewin();
     },
     bindEvent: function () {
