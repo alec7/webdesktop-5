@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source source="LOCAL" name="MySQL - desktop@localhost" uuid="a74d5ffd-1de4-4eb2-aa75-a7c6edab0002">
+    <database-info product="MySQL" version="5.5.33" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.29 ( Revision: alexander.soklakov@oracle.com-20140120140810-s44574olh90i6i4l )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="desktop"/>
+    <table name="tb_app" schema="" catalog="desktop" type="TABLE">
+      <column name="ID" sqlType="VARCHAR" length="32" precision="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="NAME" sqlType="VARCHAR" length="100" precision="0" nullable="false" jdbcType="12"/>
+      <column name="REMARK" sqlType="VARCHAR" length="500" precision="0" nullable="true" jdbcType="12"/>
+      <column name="ORDERNO" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="ISSHOW" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" def="MQ=="/>
+      <primary-key name="PRIMARY" columns="ID"/>
+      <exported-key name="FK_APPID" table="tb_appmodule" schema="" catalog="desktop" columns="APPID"/>
+    </table>
+    <table name="tb_appmodule" schema="" catalog="desktop" type="TABLE">
+      <column name="ID" sqlType="VARCHAR" length="32" precision="0" nullable="false" jdbcType="12"/>
+      <column name="APPID" sqlType="VARCHAR" length="32" precision="0" nullable="false" jdbcType="12"/>
+      <column name="MODULEID" sqlType="VARCHAR" length="32" precision="0" nullable="true" jdbcType="12"/>
+      <column name="ORDERNO" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="ID"/>
+      <foreign-key name="FK_APPID" columns="APPID" ref-table="tb_app" ref-schema="" ref-catalog="desktop" ref-columns="ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_MODULEID" columns="MODULEID" ref-table="tb_module" ref-schema="" ref-catalog="desktop" ref-columns="ID" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+    <table name="tb_icon" schema="" catalog="desktop" type="TABLE">
+      <column name="ID" sqlType="VARCHAR" length="32" precision="0" nullable="false" jdbcType="12"/>
+      <column name="URL" sqlType="VARCHAR" length="100" precision="0" nullable="true" jdbcType="12"/>
+      <column name="REMARK" sqlType="VARCHAR" length="500" precision="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="ID"/>
+    </table>
+    <table name="tb_module" schema="" catalog="desktop" type="TABLE">
+      <column name="ID" sqlType="VARCHAR" length="32" precision="0" nullable="false" jdbcType="12"/>
+      <column name="NAME" sqlType="VARCHAR" length="100" precision="0" nullable="false" jdbcType="12"/>
+      <column name="CODE" sqlType="VARCHAR" length="50" precision="0" nullable="true" jdbcType="12"/>
+      <column name="ICON" sqlType="VARCHAR" length="100" precision="0" nullable="true" jdbcType="12"/>
+      <column name="REMARK" sqlType="VARCHAR" length="500" precision="0" nullable="true" jdbcType="12"/>
+      <column name="URL" sqlType="VARCHAR" length="100" precision="0" nullable="false" jdbcType="12"/>
+      <column name="WIDTH" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4" def="MA=="/>
+      <column name="HEIGHT" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
+      <column name="MAXWIDTH" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4" def="MA=="/>
+      <column name="MAXHEIGHT" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
+      <column name="MINWIDTH" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4" def="MA=="/>
+      <column name="MINHEIGHT" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
+      <column name="DRAGGABLE" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" def="MQ=="/>
+      <column name="RESIZEABLE" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" def="MQ=="/>
+      <column name="MINNIMIZE" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" def="MQ=="/>
+      <column name="MAXIMIZE" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" def="MQ=="/>
+      <column name="ALIGN" sqlType="VARCHAR" length="20" precision="0" nullable="true" jdbcType="12"/>
+      <column name="VALIGN" sqlType="VARCHAR" length="20" precision="0" nullable="true" jdbcType="12"/>
+      <column name="VISIABLE" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4" def="MQ=="/>
+      <column name="USERIDS" sqlType="VARCHAR" length="800" precision="0" nullable="true" jdbcType="12"/>
+      <column name="USERNAMES" sqlType="VARCHAR" length="200" precision="0" nullable="true" jdbcType="12"/>
+      <column name="ISSHOW" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4" def="MQ=="/>
+      <primary-key name="PRIMARY" columns="ID"/>
+      <exported-key name="FK_MODULEID" table="tb_appmodule" schema="" catalog="desktop" columns="MODULEID"/>
+    </table>
+    <table name="tb_theme" schema="" catalog="desktop" type="TABLE">
+      <column name="ID" sqlType="VARCHAR" length="32" precision="0" nullable="false" jdbcType="12"/>
+      <column name="NAME" sqlType="VARCHAR" length="100" precision="0" nullable="false" jdbcType="12"/>
+      <column name="STYLE" sqlType="VARCHAR" length="100" precision="0" nullable="true" jdbcType="12"/>
+      <column name="REMARK" sqlType="VARCHAR" length="500" precision="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="ID"/>
+    </table>
+    <table name="tb_userdesktop" schema="" catalog="desktop" type="TABLE">
+      <column name="ID" sqlType="VARCHAR" length="32" precision="0" nullable="false" jdbcType="12"/>
+      <column name="DESKTOPJSONDATA" sqlType="LONGTEXT" length="2147483647" precision="0" nullable="true" jdbcType="-1"/>
+      <column name="THEMEID" sqlType="VARCHAR" length="32" precision="0" nullable="false" jdbcType="12"/>
+      <column name="USERID" sqlType="VARCHAR" length="32" precision="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="ID"/>
+    </table>
+  </data-source>
+</component>
