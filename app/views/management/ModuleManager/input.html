@@ -1,4 +1,5 @@
-#{extends 'template/template_view.html' /}
+#{extends 'template/template_input.html' /}
+
 <div class="worktitle">
     <div class="nav">
         <span>添加模块</span>
@@ -11,64 +12,41 @@
             <tr>
                 <td class="right title"><label class="title" for="name"><i> *</i>名称：</label></td>
                 <td>
-                    <input type="text" name="module.name" title="请输入名称" cssClass="required txt"/>
+                    <input type="text" name="module.name" title="请输入名称" class="required"/>
                 </td>
             </tr>
             <tr>
                 <td class="right title"><label class="title" for="code"><i> *</i>编码：</label></td>
                 <td>
-                    <input type="text" name="module.code" title="请输入编码" cssClass="required txt"/>
+                    <input type="text" name="module.code" title="请输入编码" class="required"/><span style="color: red">(注意：编码表示该应用的字母简写，可以是拼音的，也可以是英文)</span>
                 </td>
             </tr>
             <tr>
                 <td class="right title"><label class="title" for="icon"><i> *</i>图标：</label></td>
                 <td>
-                    <input type="file" name="icon">
+                    <input type="file" name="icon" title="请上传图标" class="required"><span style="color: red">(注意：建议上传98 * 72像素的png图片)</span>
                 </td>
             </tr>
             <tr>
                 <td class="right title"><label class="title" for="url"><i> *</i>url：</label></td>
                 <td>
-                    <input type="text" name="module.url" title="请输入url" cssStyle="width: 300px;"
-                           cssClass="required txt"/>
+                    <input type="text" name="module.url" title="请输入url"
+                           class="required"/>
                 </td>
             </tr>
             <tr>
                 <td class="right title"><label class="title" for="width"><i> *</i>默认宽度：</label></td>
                 <td>
-                    <input type="text" name="module.width" value="800" title="请输入默认宽度" cssClass="required txt"/>
+                    <input type="text" name="module.width" value="800" title="请输入宽度" class="required"/>
                 </td>
             </tr>
             <tr>
                 <td class="right title"><label class="title" for="height"><i> *</i>默认高度：</label></td>
                 <td>
-                    <input type="text" name="module.height" value="600" title="请输入默认高度" cssClass="required txt"/>
+                    <input type="text" name="module.height" value="600" title="请输入高度" class="required"/>
                 </td>
             </tr>
-            <tr>
-                <td class="right title"><label class="title" for="maxWidth">最大高度：</label></td>
-                <td>
-                    <input type="text" name="module.maxWidth" cssClass="txt"/>
-                </td>
-            </tr>
-            <tr>
-                <td class="right title"><label class="title" for="maxHeight">最大高度：</label></td>
-                <td>
-                    <input type="text" name="module.maxHeight" cssClass="txt"/>
-                </td>
-            </tr>
-            <tr>
-                <td class="right title"><label class="title" for="minWidth">最小宽度：</label></td>
-                <td>
-                    <input type="text" name="module.minWidth" cssClass="txt"/>
-                </td>
-            </tr>
-            <tr>
-                <td class="right title"><label class="title" for="minHeight">最小高度：</label></td>
-                <td>
-                    <input type="text" name="module.minHeight" cssClass="txt"/>
-                </td>
-            </tr>
+
             <tr>
                 <td class="right title"><label class="title" for="draggable">是否允许拖动：</label></td>
                 <td>
@@ -98,29 +76,6 @@
                 </td>
             </tr>
             <tr>
-                <td class="right title"><label class="title" for="align">水平对齐方式：</label></td>
-                <td>
-                    <select name="module.align">
-                        <option value="center" selected>center</option>
-                        <option value="char">char</option>
-                        <option value="justify">justify</option>
-                        <option value="left">left</option>
-                        <option value="right">right</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td class="right title"><label class="title" for="valign">垂直对齐方式：</label></td>
-                <td>
-                    <select name="module.valign">
-                        <option value="baseline" selected>baseline</option>
-                        <option value="bottom">bottom</option>
-                        <option value="middle">middle</option>
-                        <option value="top">top</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
                 <td class="right title"><label class="title" for="show">是否显示：</label></td>
                 <td>
                     <input type="radio" name="module.isShow" value="1" checked="checked">是
@@ -136,7 +91,7 @@
             </tr>
             <tr>
                 <td colspan="2" aling="right">
-                    <button id="submit" type="button" class="savebutton">
+                    <button id="btn_submit" type="button" class="savebutton showprogress">
 	                保存
                     </button>
                     <button type="button" class="backbutton" onclick="javascript:history.back(-1);">

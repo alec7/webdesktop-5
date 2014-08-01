@@ -8,8 +8,9 @@
 					</span>
             </div>
             <div class="funcs">
-                <button type="button" class="addbutton" onclick="javascript:window.location.href='module/input'">
-                    创建
+                <button type="button" class="addbutton showprogress"
+                        onclick="javascript:window.location.href='module/input'">
+	            创建
                 </button>
             </div>
         </caption>
@@ -50,9 +51,7 @@
 				#{/else}
             </td>
             <td>
-                <ul class="opts">
-                    <li class="edit"><a href="@{show(m.id)}">修改</a></li>
-                </ul>
+                <a class="editopt showprogress" href="@{show(m.id)}">修改</a>
             </td>
         </tr>
 		#{/list}
