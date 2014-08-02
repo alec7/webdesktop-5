@@ -64,17 +64,6 @@ public class DesktopCache {
 		}
 	}
 
-	public static void initIcons() {
-		try {
-			List<IconBean> icons = IconBean.findAll();
-			Cache.set("icons", icons);
-			Logger.info("[缓存Icon数量]：" + icons.size());
-		} catch (Exception e) {
-			Logger.error("初始化Icon异常");
-		}
-
-	}
-
 	public static UserdesktopBean getUserdesktop(String userId) {
 		Object obj = Cache.get("uds");
 		List<UserdesktopBean> userdesktops = null;

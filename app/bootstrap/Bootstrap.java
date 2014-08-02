@@ -21,7 +21,6 @@ public class Bootstrap extends Job {
 		DesktopCache.initApps();
 
 		DesktopCache.initThemes();
-		DesktopCache.initIcons();
 		DesktopCache.initUserdesktops();
 
 		Logger.info("----------------------------缓存构建完成--------------------------------");
