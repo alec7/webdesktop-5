@@ -7,8 +7,8 @@
 					</span>
         </div>
         <div class="funcs">
-            <button type="button" class="addbutton" onclick="javascript:window.location.href='app/input'">
-                创建
+            <button type="button" class="addbutton showprogress" onclick="javascript:window.location.href='app/input'">
+	        创建
             </button>
         </div>
     </caption>
@@ -42,11 +42,10 @@
 			#{/else}
 
         </td>
-        <td>
-            <ul class="opts">
-                <li class="edit">#{a @management.AppManager.show(app.id?:'')}修改#{/a}</li>
-            </ul>
-        </td>
+
+	    <td>
+            <a class="editopt showprogress" href="@{show(app.id)}">修改</a>
+	    </td>
     </tr>
 	#{/list}
     </tbody>

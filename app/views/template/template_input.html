@@ -22,7 +22,7 @@
 
     <script>
         $(document).ready(function () {
-            $("#btn_submit").click(function () {
+            $("#btn_submit").bind("click", function (event) {
                 if ($("#f1").valid()) {
                     $("#f1").submit();
                 } else {

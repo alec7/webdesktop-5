@@ -1,4 +1,4 @@
-#{extends 'template/template_view.html' /}
+#{extends 'template/template_input.html' /}
 <style type="text/css">
     .selectDiv {
         float: left;
@@ -24,13 +24,13 @@
             <tr>
                 <td class="right title"><i> *</i>名称:</td>
                 <td>
-                    <input name="app.name"/>
+                    <input title="名称不能为空" name="app.name" class="required"/>
                 </td>
             </tr>
             <tr>
                 <td class="right title">排序编号:</td>
                 <td>
-                    <input name="app.orderNo"/>
+                    <input name="app.orderNo"/><span style="color: red">(注意：数值越小,排序越靠前.默认在最后)</span>
                 </td>
             </tr>
             <tr>
@@ -75,11 +75,11 @@
             </tr>
             <tr>
                 <td colspan="2" aling="right">
-                    <button type="button" class="savebutton" id="saveBtn">
-                        保存
+                    <button type="button" class="savebutton showprogress" id="btn_submit">
+	                保存
                     </button>
-                    <button type="button" class="backbutton" onclick="javascript:history.back(-1);">
-                        返回
+                    <button type="button" class="backbutton showprogress" onclick="javascript:history.back(-1);">
+	                返回
                     </button>
                 </td>
             </tr>
@@ -99,12 +99,12 @@
         $("#selectModules").append(modules);
         $("#confirmModules").find("option:selected").remove();
     });
-    $("#saveBtn").click(function () {
+    $("#btn_submit").click(function () {
         var ids = "";
         $("#confirmModules").find("option").each(function () {
             ids += $(this).val() + ",";
         });
         $("#ids").val(ids);
-        $("#f1").submit();
+
     })
 </script>

@@ -1,4 +1,4 @@
-#{extends 'template/template_view.html' /}
+#{extends 'template/template_input.html' /}
 <style type="text/css">
     .selectDiv {
         float: left;
@@ -26,7 +26,7 @@
             <tr>
                 <td class="right title"><i> *</i>名称:</td>
                 <td>
-                    <input name="app.name" value="${app.name?:'无'}"/>
+                    <input title="名称不能为空" name="app.name" value="${app.name?:'无'}" class="required"/>
                 </td>
             </tr>
             <tr>
@@ -80,11 +80,11 @@
             </tr>
             <tr>
                 <td colspan="2" aling="right">
-                    <button type="button" class="savebutton" id="saveBtn">
-                        保存
+                    <button type="button" class="savebutton showprogress" id="btn_submit">
+	                保存
                     </button>
-                    <button type="button" class="backbutton" onclick="javascript:history.back(-1);">
-                        返回
+                    <button type="button" class="backbutton showprogress" onclick="javascript:history.back(-1);">
+	                返回
                     </button>
                 </td>
             </tr>
@@ -104,12 +104,12 @@
         $("#selectModules").append(modules);
         $("#confirmModules").find("option:selected").remove();
     });
-    $("#saveBtn").click(function () {
+    $("#btn_submit").click(function () {
         var ids = "";
         $("#confirmModules").find("option").each(function () {
             ids += $(this).val() + ",";
         });
         $("#ids").val(ids);
-        $("#f1").submit();
+
     })
 </script>
