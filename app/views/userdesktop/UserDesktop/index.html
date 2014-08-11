@@ -101,8 +101,8 @@
 
 <div id="rightbar">
     <a class="person" title='查看个人信息'
-       onclick="javascript:DesktopInterface.open({id:'window_0',title:'我的信息',url:'platform/desktop/userdesktop/get_my_info.shtml',width:600,height:400})">
-        <div class="item"><span>${(view?.station?.employee?.name)}</span></div>
+       onclick="javascript:DesktopInterface.open({id:'window_0',title:'我的信息',url:'userdesktop/myInfo?userId=-1',width:600,height:400})">
+    <div class="item"><span>${(view?.station?.employee?.name)}</span></div>
     </a>
     <a class="todo" title='进入个人待办事宜页面'
        onclick="javascript:var win = DesktopInterface.open({id:'window_1',title:'我的待办任务列表',url:'#',width:1000,height:500});win.max();">
@@ -120,8 +120,6 @@
        onclick="javascript:var win = DesktopInterface.open({id:'window_3',title:'阅读箱',url:'#',width:1000,height:500});win.max();">
         <div class="item"><span>阅读箱(0)</span></div>
     </a>
-*{<!-- <a class="companyportal" title='进入企业门户界面' onclick="javascript:var win = DesktopInterface.open({id:'window_3',title:'企业门户',url:'oa/portal/company/get_portal.shtml',width:1000,height:500});win.max();"><div class="item"><span>企业门户</span></div></a> -->}*
-*{<!-- a class="personalportal" title='进入个人门户界面' onclick="javascript:DesktopInterface.open({id:'window_4',title:'个人门户',url:'oa/portal/personal/personal_page.shtml',width:1000,height:500})"><div class="item"><span>个人门户</span></div></a -->}*
 
     <a class="theme" title='换肤'
        onclick="javascript:DesktopInterface.open({id:'window_5',title:'换肤',url:'management/theme/findthemes',width:600,height:400})">

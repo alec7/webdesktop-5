@@ -74,6 +74,13 @@ public class UserDesktop extends Controller {
 		DesktopCache.initUserdesktops();
 	}
 
+	//todo：需要完善个人信息页面
+	public static void myInfo(String userId) {
+		if ("-1".equals(userId)) {
+			render();
+		}
+	}
+
 	/**
 	 * 获取用户桌面数据
 	 *
