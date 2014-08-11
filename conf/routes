@@ -19,6 +19,7 @@ GET /application/apps  application.App.query
 POST /userdesktop/addmodule    userdesktop.UserDesktop.addModule
 POST /userdesktop/uninstallmodule    userdesktop.UserDesktop.uninstallModule
 POST /userdesktop/setTheme   userdesktop.UserDesktop.setTheme
+GET /userdesktop/myInfo userdesktop.UserDesktop.myInfo
 
 #桌面管理-------------------------------------------
 GET /management/index    management.Index.index
