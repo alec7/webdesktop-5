@@ -23,10 +23,14 @@
     <script>
         $(document).ready(function () {
             $("#btn_submit").bind("click", function (event) {
+                //验证通过,就提交表单
+                //注意提交表单的按钮的id是btn_submit,表单form的id是f1
                 if ($("#f1").valid()) {
                     $("#f1").submit();
                 } else {
                     Progress.hide();
+                    //提交按钮变为可用
+                    $("#btn_submit").removeAttr("disabled");
                 }
             });
 
