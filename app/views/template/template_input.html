@@ -10,33 +10,11 @@
     <title>Web桌面 - WebDesktop技术交流分享，集成平台供应, 技术支持</title>
 
     <link rel="stylesheet" media="screen" href="@{'/public/common/css/style.css'}">
+    <script src="@{'/public/common/js/jquery-1.8.3.min.js'}" type="text/javascript"></script>
     <style>body {
         padding: 0;
     }</style>
 #{get 'moreStyles' /}
-    <script src="@{'/public/common/js/jquery-1.8.3.min.js'}" type="text/javascript"></script>
-    <script src="@{'/public/common/js/jquery.validate.js'}" type="text/javascript"></script>
-    <script src="@{'/public/common/js/base.js'}" type="text/javascript"></script>
-    <script src="@{'/public/common/js/jquery.metadata.js'}" type="text/javascript"></script>
-    <script src="@{'/public/common/js/layer/layer.min.js'}" type="text/javascript"></script>
-
-    <script>
-        $(document).ready(function () {
-            $("#btn_submit").bind("click", function (event) {
-                //验证通过,就提交表单
-                //注意提交表单的按钮的id是btn_submit,表单form的id是f1
-                if ($("#f1").valid()) {
-                    $("#f1").submit();
-                } else {
-                    Progress.hide();
-                    //提交按钮变为可用
-                    $("#btn_submit").removeAttr("disabled");
-                }
-            });
-
-        });
-    </script>
-
 </head>
 
 <body>
@@ -46,5 +24,28 @@
 	#{doLayout /}
     </div>
 </div>
+
+<script src="@{'/public/common/js/jquery.validate.js'}" type="text/javascript"></script>
+<script src="@{'/public/common/js/base.js'}" type="text/javascript"></script>
+<script src="@{'/public/common/js/jquery.metadata.js'}" type="text/javascript"></script>
+<script src="@{'/public/common/js/layer/layer.min.js'}" type="text/javascript"></script>
+#{get 'moreScripts' /}
+<script>
+    $(document).ready(function () {
+        $("#btn_submit").bind("click", function (event) {
+            //验证通过,就提交表单
+            //注意提交表单的按钮的id是btn_submit,表单form的id是f1
+            if ($("#f1").valid()) {
+                $("#f1").submit();
+            } else {
+                Progress.hide();
+                //提交按钮变为可用
+                $("#btn_submit").removeAttr("disabled");
+            }
+        });
+
+    });
+</script>
+
 </body>
 </html>
