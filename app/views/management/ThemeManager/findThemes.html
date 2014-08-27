@@ -6,8 +6,6 @@
     <meta name="keywords" content="WebDesktop,webOS,web,desktop,web桌面"/>
     <title>Web桌面 - WebDesktop技术交流分享，集成平台供应,技术支持</title>
     <link rel="stylesheet" media="screen" href="@{'/public/common/css/style.css'}">
-    <script src="@{'/public/common/js/jquery-1.8.3.min.js'}" type="text/javascript"></script>
-    <script src="@{'/public/common/js/base.js'}" type="text/javascript"></script>
     <style>
         ul {
             margin: 0;
@@ -27,27 +25,6 @@
             cursor: pointer;
         }
     </style>
-    <script>
-        function changebg(number) {
-            Progress.show();
-            var url = "${play.ctxPath}" + "/userdesktop/setTheme?themeId=" + number;
-            $.ajax({
-                type: "post",
-                url: url,
-                data: {},
-                success: function (rtn) {
-                    var css = top.document.getElementById("theme_css");
-                    css.setAttribute("href", "${play.ctxPath}/public/desktop/css/themes/theme_css_" + number + ".css");
-                    Progress.hide();
-                },
-                error: function (rtn) {
-                    Progress.hide();
-                    alert("换肤不成功,请稍后再试");
-                }
-            });
-
-        }
-    </script>
 </head>
 
 <body>
@@ -128,5 +105,28 @@
     </li>
 </ul>
 
+<script src="@{'/public/common/js/jquery-1.8.3.min.js'}" type="text/javascript"></script>
+<script src="@{'/public/common/js/base.js'}" type="text/javascript"></script>
+<script>
+    function changebg(number) {
+        Progress.show();
+        var url = "${play.ctxPath}" + "/userdesktop/setTheme?themeId=" + number;
+        $.ajax({
+            type: "post",
+            url: url,
+            data: {},
+            success: function (rtn) {
+                var css = top.document.getElementById("theme_css");
+                css.setAttribute("href", "${play.ctxPath}/public/desktop/css/themes/theme_css_" + number + ".css");
+                Progress.hide();
+            },
+            error: function (rtn) {
+                Progress.hide();
+                alert("换肤不成功,请稍后再试");
+            }
+        });
+
+    }
+</script>
 </body>
 </html>
