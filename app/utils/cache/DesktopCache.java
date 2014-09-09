@@ -78,6 +78,9 @@ public class DesktopCache {
 				return userdesktop;
 			}
 		}
+		if (userdesktops.size() == 0) {
+			return new UserdesktopBean();
+		}
 		return null;
 	}
 
