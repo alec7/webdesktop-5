@@ -1,19 +1,17 @@
 #{extends 'template/template_view.html'/}
+<div class="worktitle">
+    <span class="title">
+            模块管理
+    </span>
+    <span class="funcs">
+        <button type="button" class="addbutton showprogress"
+                onclick="javascript:window.location.href='module/input'">
+            创建
+        </button>
+    </span>
+</div>
 <form action="find_modules.shtml" method="post">
     <table class="tablegrid">
-        <caption class="worktitle">
-            <div class="nav">
-					<span>
-							模块管理
-					</span>
-            </div>
-            <div class="funcs">
-                <button type="button" class="addbutton showprogress"
-                        onclick="javascript:window.location.href='module/input'">
-	            创建
-                </button>
-            </div>
-        </caption>
         <colgroup>
             <col class="width80"></col>
             <col class="width80"></col>
