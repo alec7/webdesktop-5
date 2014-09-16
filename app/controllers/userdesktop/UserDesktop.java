@@ -34,7 +34,9 @@ public class UserDesktop extends Controller {
 		UserdesktopBean userdesktop = getUserdesktop(getUser());
 		userdesktop.AddModule(pageno, moduleBean);
 
-		userdesktop.merge();
+		userdesktop.save();
+		//更新完成之后，重建缓存
+		DesktopCache.initUserdesktops();
 
 		String moduleJsonData = new Gson().toJson(moduleBean);
 		renderJSON(moduleJsonData);
@@ -53,7 +55,9 @@ public class UserDesktop extends Controller {
 
 		userdesktop.uninstallModule(pageno, moduleBean);
 
-		userdesktop.merge();
+		userdesktop.save();
+		//更新完成之后，重建缓存
+		DesktopCache.initUserdesktops();
 	}
 
 	public static void setTheme(String themeId) {

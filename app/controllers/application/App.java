@@ -17,7 +17,7 @@ public class App extends Controller {
 	/**
 	 * 从缓存中查询所有app
 	 */
-	public static void Query() {
+	public static void query() {
 		List<AppBean> apps = DesktopCache.getAllApps();
 		render(apps);
 	}

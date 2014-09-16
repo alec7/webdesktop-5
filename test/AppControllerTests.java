@@ -11,6 +11,6 @@ import play.test.UnitTest;
 public class AppControllerTests extends UnitTest {
 
 	public void testQuery() {
-		App.Query();
+		App.query();
 	}
 }
