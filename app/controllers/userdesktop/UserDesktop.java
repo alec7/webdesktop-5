@@ -34,7 +34,7 @@ public class UserDesktop extends Controller {
 		UserdesktopBean userdesktop = getUserdesktop(getUser());
 		userdesktop.AddModule(pageno, moduleBean);
 
-		userdesktop.save();
+		userdesktop.merge();
 		//更新完成之后，重建缓存
 		DesktopCache.initUserdesktops();
 
@@ -55,7 +55,7 @@ public class UserDesktop extends Controller {
 
 		userdesktop.uninstallModule(pageno, moduleBean);
 
-		userdesktop.save();
+		userdesktop.merge();
 		//更新完成之后，重建缓存
 		DesktopCache.initUserdesktops();
 	}
